@@ -1,11 +1,13 @@
 TARGET=sourcecode_attractiveness
 
-all:
+all: $(TARGET).pdf
+	evince $(TARGET).pdf &
+
+$(TARGET).pdf: $(TARGET).tex
 	pdflatex $(TARGET).tex
 	bibtex $(TARGET)
 	pdflatex $(TARGET).tex
 	pdflatex $(TARGET).tex
-	evince $(TARGET).pdf &
 
 edit:
 	gedit Makefile *.bib *.tex &

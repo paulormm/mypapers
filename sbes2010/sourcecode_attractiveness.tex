@@ -1,4 +1,4 @@
-\documentclass[12pt, brazil]{article}
+\documentclass{IEEEconf}
 \usepackage[T1]{fontenc}
 \usepackage[latin1]{inputenc}
 \usepackage{verbatim}
@@ -8,44 +8,34 @@
 \usepackage{type1cm}
 \usepackage{url}
 \usepackage{courier}
-
-\makeatletter
-
-\usepackage{sbc-template}
-
-\makeatother
-
-%\usepackage[brazil]{babel}
-
 \newcommand{\TODO}[1]{{\color{red}\textbf{\uwave{#1}}}}
-
-\begin{document}
-\normalem
-\def\UrlFont{\tt\footnotesize}
-\sloppy
-\address{
-Free Software Competence Center
-\\Institute of Mathematics and Statistics
-\\University of S\~ao Paulo, Brazil (CCSL-IME/USP)
-\\
-\textsuperscript{2}Department of Computer Science
-\\Federal University of Bahia, Brazil (DCC-UFBA)
-\\
-\email{	\textsuperscript{1}\{paulormm,denner,kon\}@ime.usp.br, 
-	\textsuperscript{2}\{terceiro,flach\}@dcc.ufba.br}
-}
 
 \title{A Study of the Relationship between Source Code Metrics and Attractiveness in Free Software Projects}
 
 \author{
-Paulo Meirelles\textsuperscript{1},
-Carlos Santos Jr.\textsuperscript{1},
-Antonio Terceiro\textsuperscript{2},
-\\
-Christina Chavez\textsuperscript{2},
-Fabio Kon\textsuperscript{1}
+  Paulo Meirelles, Carlos Santos Jr., Fabio Kon
+  \\
+  \begin{affiliation}
+    Free Software Competence Center\\
+    Institute of Mathematics and Statistics\\
+    University of S\~ao Paulo, Brazil\\
+    (CCSL-IME/USP)\\
+    \email{\{paulormm,denner,kon\}@ime.usp.br}
+  \end{affiliation}
+  \and
+  Antonio Terceiro, Christina Chavez
+  \\
+  \begin{affiliation}
+    Department of Computer Science\\
+    Federal University of Bahia, Brazil\\
+    (DCC-UFBA)\\
+    \email{\{terceiro,flach\}@dcc.ufba.br}
+  \end{affiliation}
 }
 
+\begin{document}
+\normalem
+\def\UrlFont{\tt\footnotesize}
 \maketitle
 
 \begin{abstract}
@@ -66,31 +56,32 @@ source code somehow affect the choice to contribute to or to adopt a free softwa
 The findings described in this study show that it is relevant for project leaders 
 to monitor source code quality, most specifically a few objective metrics, since
 these can have a positive influence in their chances of forming a community of 
-contributors around the software, further enhancing its quality.\end{abstract}
+contributors around the software, enabling further enhancement in its quality.
+\end{abstract}
 
-\begin{resumo} 
-Um número significativo de projetos de Software Livre tem sido amplamente utilizado 
-e considerado de sucesso. Entretanto, existe um número maior de projetos que nunca 
-ultrapassam a barreira inicial de construção de uma comunidade de usuários e 
-desenvolvedores. 
-%
-Neste estudo, investigamos a existência de uma correlação entre um 
-conjunto de métricas de código-fonte selecionado e a atratividade de projetos de
-software livre, que é a capacidade de atrair usuários e desenvolvedores. 
-Para verificar esse relacionamento, analisamos 6.773 projetos de Software Livre 
-do SourceForge.net. 
-%
-Os resultados indicam que a atratividade está correlacionada com certas 
-métricas de código-fonte de forma significativa. 
-Isso significa que, independente dos interesses individuais, 
-os usuários e desenvolvedores parecem também serem influenciados de alguma forma
-pelas características do código-fonte ao adotar e contribuir com um software. 
-%
-Dessa forma, os líderes de projetos devem monitorar as métricas de código-fonte, 
-mais específicamente um conjunto de métricas específicas, que podem ser 
-calculadas de forma objetiva. Essas métricas apresentam uma influência positiva 
-em suas chances de formar uma comunidade de contribuidores em torno do software.
-\end{resumo}
+%\begin{resumo} 
+%Um número significativo de projetos de Software Livre tem sido amplamente utilizado 
+%e considerado de sucesso. Entretanto, existe um número maior de projetos que nunca 
+%ultrapassam a barreira inicial de construção de uma comunidade de usuários e 
+%desenvolvedores. 
+%%
+%Neste estudo, investigamos a existência de uma correlação entre um 
+%conjunto de métricas de código-fonte selecionado e a atratividade de projetos de
+%software livre, que é a capacidade de atrair usuários e desenvolvedores. 
+%Para verificar esse relacionamento, analisamos 6.773 projetos de Software Livre 
+%do SourceForge.net. 
+%%
+%Os resultados indicam que a atratividade está correlacionada com certas 
+%métricas de código-fonte de forma significativa. 
+%Isso significa que, independente dos interesses individuais, 
+%os usuários e desenvolvedores parecem também serem influenciados de alguma forma
+%pelas características do código-fonte ao adotar e contribuir com um software. 
+%%
+%Dessa forma, os líderes de projetos devem monitorar as métricas de código-fonte, 
+%mais específicamente um conjunto de métricas específicas, que podem ser 
+%calculadas de forma objetiva. Essas métricas apresentam uma influência positiva 
+%em suas chances de formar uma comunidade de contribuidores em torno do software.
+%\end{resumo}
 
 \section{Introduction}
 
@@ -130,19 +121,22 @@ in November, 2009, from Sourceforge.net, one of the most popular open source cod
 repositories. Out of its 201,494 projects, only 60,642 had more than one
 release, 40,228 had been downloaded more than once, and 23,754 had more than one member. 
 %
-Finally, only 12,141 projects matched all these criteria simultaneously. 
-To us, this means that no more than 6\% of the projects on SourceForge.net are probably 
-closer to either building or already having a community of users and developers as well
-as benefiting from a Bazaar style of development \cite{CatedralBazzar}.
+Finally, only 12,141 projects matched all these criteria simultaneously.
+To us, this means that no more than 6\% of the projects on
+SourceForge.net are in conditions to have a healthy community of users
+and developers and benefiting from a Bazaar style of development
+\cite{CatedralBazzar}.
 
 In this study, we explore some of the factors that enable projects to build
 a community by attracting users and developers.
 %
-A number of them are highly subjective, such as audience, community building processes, 
-and the project leaders managerial skills.
+A number of these factors are highly subjective, such as audience,
+community building processes, and the project leaders managerial skills.
 %
-However, our focus in this study is on objective factors: we investigate whether
-attractiveness can also be influenced by measurable source code characteristics. 
+However, our focus in this study is on objective factors: we investigate
+whether attractiveness, the ability of a projet to attract users and
+developers, can also be influenced by measurable source code
+characteristics. 
 
 Santos Jr. \cite{Santos2010} defined a theoretical model for attractiveness as
 a crucial construct for Free Software projects, proposing its typical origins 
@@ -150,8 +144,8 @@ a crucial construct for Free Software projects, proposing its typical origins
 and consequences (levels of activity, efficiency, likelihood of task completion, 
 time for task completion, and software quality).
 %
-In this model, he suggested that any project's success depends on its level of 
-attractiveness to potential contributors.
+In this model, he suggested that the success of any project depends on
+its level of attractiveness to potential contributors.
 %
 Thereby, we investigate whether attributes represented by source code 
 metrics may affect the project's attractiveness.
@@ -175,7 +169,7 @@ code metrics are related to a project's attractiveness and, thus, influence its 
 %
 To verify these ideas empirically, we analyzed 6,773 projects
 written in the C language from SourceForge.net. We show that one structural complexity
-metric and two size metrics may play a role in explaining attractiveness, 
+metric and two size metrics play an important role in explaining attractiveness, 
 here represented by number of downloads and number of project members.
 
 The remainder of this paper is organized as follows: Section 2
@@ -187,7 +181,11 @@ directions are discussed in Section 7.
 
 \section{Theoretical Background}
 
-Typical definitions for quality assessment, as described in the ISO 9126 \cite{ISO9126}, are hard to apply to Free Software projects. Free Software projects possess a varying number of voluntary contributors and many of the definitions present in the ISO are not performed explicitly \cite{Michlmayr2005}.
+Typical definitions for quality assessment, as described in the ISO 9126
+standard \cite{ISO9126}, are difficult to apply to Free Software projects.
+Free Software projects exhibit a varying number of voluntary
+contributors and many of the definitions present in ISO 9126 are not
+performed explicitly \cite{Michlmayr2005}.
 %
 On the other hand, some aspects of product quality can be evaluated by using
 objective metrics, and some of these metrics can be collected automatically.
@@ -199,17 +197,20 @@ source code metrics and attractiveness variables used in this study.
 
 The most commonly used metric to measure software size is \emph{Lines of Code} (LOC).
 Using the LOC metric as a basis for comparison between projects requires 
-that the projects be written in the same programming language \cite{Jones91}.
-LOC calculates all lines that are not lines of comments or blank.
+the projects to be written in the same programming language \cite{Jones91}.
+LOC indicates the number of non-blank, non-comment source code lines in
+the project.
 
 Another useful metric for software size is the \emph{number of modules}, 
 which is somewhat less influenced by programming languages and line-level
 coding styles. Therefore, it may be used to compare projects written in 
 different languages \cite{Tempero}.
 %
-It reflects the modularization of features in different building blocks, 
-whether they are called modules, classes, abstract data types, source files, etc.
-
+In this work, we use the concept of module as a general term for
+refering to the different types of building-blocks used in software
+development depending on the programming language and/or paradigm. We
+use the general term ``module'' to stand for classes, abstract data
+types, source files etc.
 
 When considering characteristics such as maintainability, flexibility,
 comprehension effort, and source code quality in general, one has to take into 
@@ -243,16 +244,17 @@ A metric commonly used for cohesion is \emph{Lack of Cohesion on
 Methods} (LCOM), originally proposed by Chidamber and Kemerer \cite{Chidamber94}.
 High LCOM values indicate low cohesion, while low LCOM values indicate high cohesion.
 
-The first LCOM definition, called LCOM1, has received a lot of criticism and revision
-proposals. LCOM1 corresponds to number of pairs of methods of a class using the same attributes.
+The first LCOM definition by Chidamber and Kemerer, called LCOM1, has
+received a lot of criticism and revision proposals. LCOM1 corresponds to
+the number of pairs of methods of a class using the same attributes.
 %
 In this paper, we used the revised definition by Hitz and Montazeri, 
 known as LCOM4 \cite{LCOM4}. 
 %
-LCOM4 is the number of components of an undirected graph, where the vertices 
-are the methods. When two methods use at least an attribute in common, 
-there is an edge between these vertices. Additionally, the graph has an edge 
-between these methods, if one invokes the other.
+LCOM4 indicates the number of components of an undirected graph, where the
+nodes are the methods. When two methods use at least an attribute in
+common, there is an edge between the corresponding nodes. Additionally, the graph
+has an edge between these methods, if one invokes the other.
 
 
 \emph{Coupling} is a measure of how one module is connected to other modules
@@ -283,18 +285,17 @@ they are metrics that must be considered together. When combined, the
 product of coupling and cohesion as a metric is positively correlated to 
 the maintenance effort.
 % 
-Therefore, we use the product of coupling and cohesion as our metric of structural complexity.
+Therefore, we use the product of coupling (CBO) and cohesion (LCOM4) as
+our metric of structural complexity (SC), as in \cite{darcy2005}.
 
-LCOM and CBO were originally proposed with the object-oriented paradigm in mind.
-Nevertheless, if we generalize the concepts of ``class'' and ``method'' to ``module''
-and ``function'', we can also apply them to other programming paradigms. In this
-study, we used the product of LCOM4 and CBO as the metric for structural complexity of the C projects we evaluated.
+The NM, NPA, NPM, LCOM and CBO metrics were originally proposed as
+metrics for the object-oriented paradigm in mind.  Nevertheless, if we
+generalize the concepts of ``class'' and ``method'' to ``module'' and
+``function'', respectively, we can also apply them to other programming
+paradigms.
 
 \subsection{Attractiveness}
 
-We investigated whether the attributes, represented by the source code metrics 
-described above, affect the attractiveness of Free Software projects.
-%
 Attractiveness is the capacity of bringing users and developers to a project.
 %
 A Free Software project is attractive as long as it has the ability to interest 
@@ -319,7 +320,10 @@ One should note that the number of downloads and number of members
 at SourceForge.net are simply proxies to the actual number of users and number of 
 developers in the project, respectively.
 %
-The study explored a large number of projects and applied the same criteria uniformly to all of them. The number of downloads is a generalization of the number of people interested in the software. The number of members point to the number of contributors to the project.
+The study explored a large number of projects and applied the same
+criteria uniformly to all of them. The number of downloads is a
+representation of the number of people interested in the software. The
+number of members represents the number of contributors to the project.
 
 Our hypotheses were based on the idea that most developers of a Free Software project 
 are interested in working with quality code, so they can learn 
@@ -525,7 +529,7 @@ Accordingly, we ended up considering LOC and NM as size metrics. Theoretically,
 the more LOC, the more NM. 
 %
 However, it is possible to have more lines of code without having more modules, by 
-inserting codes into an existing module. Also, a software could have more modules 
+adding code into existing modules. Also, a software could have more modules 
 but keep the number of lines of code when refactoring is applied. 
 %
 In conclusion, they measure different kinds of size metrics: more or less 
@@ -602,7 +606,7 @@ SourceForge.net shares its data to support Free Software researchers.
 %
 In this study, we used the data available in a database managed by 
 the University of Notre Dame \footnote{\url{http://www.nd.edu/~oss/Data/data.html}} 
-and another one provide by the FLOSSMole project \footnote{\url{http://flossmole.org}}. 
+and another one provided by the FLOSSMole project \footnote{\url{http://flossmole.org}}. 
 %
 We accessed these databases in November, 2009 and collected data about 
 all the projects that matched the following criteria:
@@ -627,10 +631,14 @@ Later, we developed another script that runs \texttt{Analizo} sequentially
 for all projects and stores the computed metrics in a single database. 
 %
 We successfully computed the metrics for 6,773 projects, because 
-(i) some downloaded files did not contain source code, 
-i.e., they contained only a register or initial project, or 
-(ii) the source code was not written in C, i.e., a wrong register, or
-(iii) they could not be processed by \texttt{Analizo} due to severe errors in the source code.
+(i) some downloaded files did not contain source code (e.g. binary-only
+downloads),
+%
+(ii) the source code was not written in C, (the project was
+incorrectly classified as being written in C), or
+%
+(iii) they could not be processed by \texttt{Analizo} due to severe
+errors in the source code.
 
 Finally, we cross-joined the two datasets (the SourceForge.net data available
 from the University of Notre Dame and FLOSSMole on the one side and the source code metrics calculated by
@@ -640,9 +648,10 @@ on the Web\footnote{\url{http://ccsl.ime.usp.br/mangue/empiricalstudy}}.
 
 \section{Research hypotheses}
 
-Attractiveness is about human decisions \cite{Santos2010}. Many factors may influence a user
-to download a piece of software, such as the indication of a friend, a hint from a magazine,
-a fancy Web site, work needs, and new features.
+Attractiveness is about human decisions \cite{Santos2010}. Many factors
+may influence an user to download a piece of software, such as the
+indication of a friend, a hint from a magazine, a fancy Web site, work
+needs, or new features.
 %
 Similarly, the decision of a developer to support a Free Software project involves
 several subjective matters such as favorite programming language/paradigm and 
@@ -664,14 +673,16 @@ less members and users, the project may lose its ability to add new features
 and fix bugs and, consequently, its ability to evolve and meet the user's
 changing requirements.
 
-\emph{H2: Free Software projects with larger total lines of code have
+\emph{H2: Free Software projects with more lines of code have
 higher attractiveness.}
 %
-Lines of code somehow reflect the amount of features of the project and the amount of work put into it. Therefore, projects with more lines of code will usually attract more users 
-(since they have more features) and developers (since they offer more
-opportunities for contribution).
+Lines of code somehow reflect the amount of features of the project and
+the amount of work that have been put into it. Therefore, projects with
+more lines of code will usually attract more users (since they have more
+features) and developers (since they offer more opportunities for
+contribution).
 
-\emph{H3: Free Software projects with a larger number of modules have
+\emph{H3: Free Software projects with a higher number of modules have
 higher attractiveness.}
 %
 The number of modules may indicate the project size and the possibility
@@ -686,7 +697,8 @@ write more features and fix more bugs, which would then attract more users.
 
 \subsection{Hypotheses testing}
 
-We defined a multiple regression model to explain the relationships between a
+We defined a multiple regression model to explain the relationships
+between the
 selected source code metrics and attractiveness in Free Software projects. 
 %
 Before applying this model, we analyzed the descriptive statistical values 
@@ -844,13 +856,13 @@ a project is less active.
 %\TODO{usar with ou and quando citar beta e p?}
 
 % H2
-The second hypothesis (\emph{H2: Free Software projects with larger total
+The second hypothesis (\emph{H2: Free Software projects with more
 lines of code have higher attractiveness}) is also supported by our data.
 Lines of code has a positive influence on attractiveness.
 %
 For downloads, this metric has $\beta = 0.856$, with $p<0.001$.
 In this context, lines of code can be an indication of the amount of
-software features and amount of work put into the project so far.  
+software features and amount of work that have been put into the project so far.  
 The more features available, the more users
 will become interested in the project.  This may make the software more
 famous and more useful, attracting new members and users.
@@ -863,7 +875,7 @@ it is associated with software features and project size.
 
 % H3
 The most interesting results were related to our third hypothesis
-(\emph{H3: Free Software projects with a larger number of modules have
+(\emph{H3: Free Software projects with a higher number of modules have
 higher attractiveness}).
 % part 1 - discuss the statistics
 For downloads, the data does not support the hypothesis: the high
@@ -939,7 +951,7 @@ These metrics were also found to be negatively correlated with
 contributions from new developers, i.e., more complex code is less
 likely to attract new developers. However, Midha's study used complexity metrics
 measured at the subroutine level, while in this paper we use
-complexity metrics in the module level.
+complexity metrics at the module level.
 
 Capra \emph{et al.} \cite{capra2008} has shown that open governance is associated 
 with higher software design quality on a study with 75 Free Software projects. They defined software design quality in terms of 5 Object-Oriented metrics,
@@ -986,7 +998,7 @@ causally linking software source code characteristics with attractiveness.
 %
 In doing so, we expect to raise awareness on an important topic so far
 neglected. Free Software projects fail when they lack attractiveness.
-Therefore, to understand what influences attractiveness provides
+Therefore, understanding what influences attractiveness provides
 managerial knowledge to project leaders, pointing them to the right
 direction on prioritizing their resources.
 
@@ -1012,10 +1024,11 @@ which favors developer contributions such as new features and bug fixes.
 Moreover, our analysis indicated that software growth may impact its
 complexity, weighting down the positive effects of new added features
 on attractiveness, for example. Ideally, a project should keep its
-complexity constant as new codes are incorporated, because developers are
+complexity constant as new code is incorporated, because developers are
 interested in improving the software, and the users in the improvements.
 %
-This demonstrates to project leaders (in communities, foundations, governments, and enterprises) 
+This demonstrates to project leaders (in communities, foundations,
+governments, and companies) 
 the importance to monitor LCOM and CBO metrics together with NM and LOC, 
 thereby increasing their chances of forming a community of contributors 
 around their software, further enhancing its quality.
@@ -1052,8 +1065,8 @@ independent from ours and taking them into account together with ours would
 apparently explain roughly 40\% of attractiveness variance.
 %
 However, including variables in an equation in a statistically sound manner is not 
-straightforward. Accordingly, another future venue to pursue will be necessary 
-to identify the interaction between this set of variables with the ones reported
+straightforward. Accordingly, another future venue to pursue is  
+to identify the interaction between that set of variables with the ones reported
 in this study.
 
 %\vspace{-0.5em}
