@@ -61,47 +61,24 @@ these can have a positive influence in their chances of forming a community of
 contributors and users around the software, enabling further enhancement in its quality.
 \end{abstract}
 
-%\begin{resumo} 
-%Um número significativo de projetos de Software Livre tem sido amplamente utilizado 
-%e considerado de sucesso. Entretanto, existe um número maior de projetos que nunca 
-%ultrapassam a barreira inicial de formação de uma comunidade de usuários e 
-%desenvolvedores. 
-%%
-%Nesse estudo, investigamos a existência de correlações entre um 
-%conjunto de métricas de código-fonte e a atratividade dos projetos de
-%software livre, que é a capacidade de atrair usuários e desenvolvedores. 
-%Para verificar estes relacionamentos hipotetizados, analisamos 6.773 projetos de Software Livre 
-%do SourceForge.net. 
-%%
-%Os resultados indicam que a atratividade do projeto está correlacionada com certas 
-%métricas de código-fonte de forma significativa. 
-%Isso significa que, independente dos interesses individuais, 
-%os usuários e desenvolvedores parecem ser influenciados de alguma forma
-%pelas características do código-fonte ao adotar e contribuir com um software. 
-%%
-%Dessa forma, os líderes de projetos devem monitorar certas métricas de código-fonte, que podem ser 
-%calculadas de forma objetiva. Isto porque estas métricas apresentam uma influência positiva 
-%nas chances de uma comunidade de contribuidores e usuários se formar em torno do projeto, aumentando a qualidade do software livre.
-%\end{resumo} 
-
 \section{Introduction}
 \label{introduction}
 
 The adoption of Free and Open Source Software\footnote{In our work,
 we consider the terms Free Software and Open Source Software (OSS) equivalent.}
 has significantly increased in the last decades, to the point of becoming
-influential to the global economy \cite{Benkler06}.
+influential to the global economy~\cite{Benkler06}.
 %
-Although Free Software was born as a movement originally supported by volunteer
-developers, many large enterprises are now involved in it \cite{Wasserman2007, Riehle2007}.
+Although Free Software has emerged as a movement supported by volunteer developers,
+many large companies are now involved in it~\cite{Wasserman2007, Riehle2007}.
 %
-According to a Forrester Consulting survey, which compared large enterprises in
-Europe and North America \cite{Forrester-Consulting2008},
+According to a Forrester Consulting survey, which compared large companies
+in Europe and North America~\cite{Forrester-Consulting2008},
 the usage of Free Software is currently widespread in the back-end, middleware,
 office productivity tools, and business applications software categories.
 %
 Moreover, this survey states that 92\% of the senior business and IT executives
-say that Free Software products have met and, in some cases, exceeded 
+say that Free Software products have met and, in some cases, exceeded
 their quality expectations.
 
 This satisfaction and quality is usually achieved thanks to the collaboration
@@ -110,68 +87,64 @@ fixes bugs, and adds features.
 %
 In fact, the Free Software development model is said to offer two main advantages:
 the potential for peer-review and the possibility of attracting developers
-from different parts of the world \cite{Michlmayr2005}.
+from different parts of the world~\cite{Michlmayr2005}.
 %
-Hence, it is important for Free Software projects to attract volunteers \cite{Stewart2006}.
+Hence, an important issue for Free Software projects is to attract volunteers~\cite{Stewart2006}.
 
-However, we know that not all Free Software projects reach success and high
-quality \cite{Michlmayr2005}. The amount of projects that is inactive
-is undoubtedly higher compared to the number of active projects.
+However, not all Free Software projects reach success and high quality~\cite{Michlmayr2005}.
+The amount of inactive projects is undoubtedly higher compared to the number of active projects.
 %
-To illustrate this scenario, we can take into account the data extracted
-in November, 2009, from Sourceforge.net, one of the most popular open source projects
-repositories. Out of its 201,494 projects, only 60,642 had more than one
+To illustrate this scenario, consider the data extracted in November, 2009,
+from Sourceforge.net, one of the most popular Free Software repositories.
+Out of its 201,494 projects, only 60,642 had more than one
 release, 40,228 had been downloaded more than once, and 23,754 had more than one member.
 %
 Finally, only 12,141 projects matched all these criteria simultaneously.
-To us, this means that no more than 6\% of the projects on
-SourceForge.net are in conditions to have a healthy community of users
-and developers benefiting from a Bazaar style of development
+This may indicate that no more than 6\% of the projects on
+SourceForge.net are able to have a healthy community of users
+and developers and benefiting from a Bazaar style of development
 \cite{CatedralBazzar}.
 
-In this study, we explore some of the factors that enable projects to build
-a community by attracting users and developers.
+Santos Jr. \emph{et al.} defined a theoretical model for attractiveness as
+a crucial construct for Free Software projects, proposing their
+(i) typical origins (e.g., license type, intended audience, type of project, and development status);
+(ii) indicators (e.g., number of members and downloads);
+(iii) consequences (e.g, levels of activity, efficiency, likelihood of task completion,
+time for task completion, and software quality)~\cite{Santos2010}.
 %
-A number of these influencing factors are highly subjective, such as audience 
-and the project leaders managerial skills.
-%
-However, our focus in this study is on objective factors: we investigate
-whether attractiveness, the ability of a project to attract users and
-developers, can also be influenced by measurable source code characteristics. 
-
-Santos Jr. \cite{Santos2010} defined a theoretical model for attractiveness as
-a crucial construct for Free Software projects, proposing its typical origins 
-(project characteristics), indicators (number of members and downloads),
-and consequences (levels of activity, efficiency, likelihood of task completion, 
-time for task completion, and software quality).
-%
-In this model, they suggested that the success of any project depends on
+They suggested that the success of any project depends on
 its level of attractiveness to potential contributors and users.
 %
-Thereby, we investigate whether attributes represented by source code
-metrics may affect the project attractiveness.
+Based on this model, our study explored some of the factors that may enable projects to build
+a community by attracting users and developers. Specifically, our focus rests on objective factors:
+we investigated whether attractiveness can also be influenced by measurable
+source code attributes.
 
-Although source code metrics have been proposed since the 1970s
-\cite{SEI88}, their potential use as guidelines for software development has not 
-been fully explored yet \cite{Tempero}.
+Although source code metrics have been proposed since the 1970s~\cite{SEI88},
+their potential use as guidelines for software development has not
+been fully explored yet~\cite{Tempero}.
 %
-In particular, we have observed that many Free Software projects do not practice 
+In particular, we have observed that many Free Software projects do not practice
 source code quality evaluation and have no tools available to do so.
 %
 This lack of systematic code evaluation leaves a lot of room for improvement
-in Free Software projects' processes and practices \cite{Michlmayr2005}.
+in Free Software projects' processes and practices~\cite{Michlmayr2005}.
 
 In general, despite the high importance of source code in the Free Software
-community, called the ``show me the code'' culture, source code metrics are 
+community, called the ``show me the code'' culture, source code metrics are
 often not perceived as an indicator of quality.
 %
 To address this apparent contradiction, we argue, theoretically, that source
 code metrics are related to a project attractiveness and, thus, influence its success.
 %
 To verify these ideas empirically, we analyzed 6,773 projects
-written in the C language from SourceForge.net. We show that one structural complexity
-metric and two size metrics play an important role in explaining attractiveness,
-here represented by number of downloads and number of project members.
+written in the C language from SourceForge.net.
+%
+We show that, considering such a sample, one structural complexity metric
+and two size metrics play an important role in explaining attractiveness,
+here represented by the number of downloads and the number of project members.
+
+%\TODO{must be "we argue" and "we show" in past?}
 
 The remainder of this paper is organized as follows:
 %
@@ -182,7 +155,7 @@ Section \ref{researchDesign} shows the selection criteria and definition for
 the variables used in our study.
 %
 Section \ref{hypotheses} presents our hypotheses and discusses their tests
-and results. 
+and results.
 %
 Section \ref{relatedWork} reviews related work.
 %
