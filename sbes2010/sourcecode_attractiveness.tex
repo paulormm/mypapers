@@ -54,7 +54,7 @@ these can have a positive influence in their chances of forming a community of
 contributors and users around the software, enabling further enhancement in its quality.
 \end{abstract}
 
-%\pagebreak
+\pagebreak
 \tableofcontents
 \pagebreak
 
@@ -177,11 +177,11 @@ to build a statistical model that represents the relationships proposed.
 \subsection{Source code metrics}
 \label{scm}
 
-For our selected metrics set, we used the concept of ``module''
+For our subset of source code metrics, we used the concept of ``module''
 as a general term for the different types of building blocks used in software
 development, standing for classes, abstract data types, source files, etc. 
 %
-Specifically in this study, we used the concept of ``module''for C source files.
+Specifically in this study, we used the concept of ``module'' for C source files.
 %
 Similarly, we generalized the concept of ``method''
 to ``function'', denoting a portion of source code that performs a specific task.
@@ -317,13 +317,24 @@ the same criteria uniformly to all of them.
 Thereby, we did not find in previous works other proxies that can represent 
 number of users and number of developers in a large sample of projects.
 
-%\begin{figure*}[!t]
-%\centering
-%\includegraphics[scale=.5]{attractiveness}
-%\caption{Simulation Results}
-%\label{Attractiveness model: include}
-%\end{figure*}
+\begin{comment}
 
+\begin{figure*}[!t]
+\centering
+\includegraphics[scale=.5]{attractiveness}
+\caption{Simulation Results}
+\label{Attractiveness model: include}
+\end{figure*}
+
+o conceito de atratividade em projetos de software livre foi desenvolvido como um construtor latente que se expressa empiricamente de tres formas: (a) um projeto de software livre deve trazer visitantes ao portal do projeto; (b) os administradores do projeto esperam que os visitantes facam o download do software, potencialmente se tornando usuarios e/ou desenvolvedores da aplicacao; e (c) o visitante-usuario do software pode se tornar membro do projeto, habilitando-se a contribuir para ele, ajudando assim os estrategistas a atingirem seus objetivos mais ambiciosos. Eh com o intuito de explicar e maximizar o numero de (1) visitas, (2) downloads e (3) membros que o estudo das causas de atratividade se justifica.
+
+Santos Jr. e Pearson apresentaram uma serie de testes estatisticos onde projetos com diferentes caracteristicas tiveram seus indices de atratividade comparados, procurando indicativos de que estas caracteristicas poderiam influenciar atratividade. Entre essas caracteristicas estao a(s) licenca(s) sob a qual o software foi disponibilizado a comunidade (e.g., GPL ou BSD), o publico-alvo do projeto (e.g., desenvolvedores ou usuarios-finais), os estagios das versoes do software disponibilizadas no portal do projeto (e.g., beta ou producao), e o tipo do projeto (e.g., cientifico ou jogo), ver Figura 1 para detalhes do modelo teorico. Em suma, neste doutorado sanduiche, queremos inserir no modelo teorico de causa e efeito de atratividade os atributos do codigo-fonte como uma das caracteristicas dos projetos de software livre correlacionadas com a atratividade.
+
+Na literatura, o significado de sucesso em projetos de software livre ja foi medido de diversas formas como: numero de downloads (Crowston et al. 2004; Krishnamurthy 2002; Stewart et al. 2006); habilidade de avancar nas fases de desenvolvimento (Crowston et al. 2002; Raja et al. 2006); ou ainda como a propria quantidade de membros de um projeto (Crowston et al. 2006; Koch 2004). Nos nao acreditamos que estas medidas representem sucesso de forma completa, mas sim uma das formas de ajudar a chegar ao sucesso (ou mante-lo). Entretanto, no contexto do software livre, com o codigo-fonte sendo considerado o principal artefatos do projeto, levantamos a hipotese de que os atributos do codigo-fonte podem influenciar na atratividade do projeto, pois determinadas caracteristicas do codigo-fonte podem levar a mais contribuicoes ao software, atraindo mais usuarios e membros.
+
+Esse e um primeiro passo em nossa analise de milhares de projetos de software livre atraves da qual queremos investigar a tese de que a escrita de codigo-fonte com determinadas caracteristicas (e.g., baixo acoplamento e alto coesao) tambem leva a projetos de maior sucesso.
+
+\end{comment}
 
 %Attractiveness is a human perception \cite{Santos2010}. 
 %Many factors may influence a user to download a piece of software, such as a
@@ -339,77 +350,44 @@ number of users and number of developers in a large sample of projects.
 \section{Research Design} 
 \label{researchDesign}
 
-%This Section presents .... \TODO{Chris :  Preambulo da Secao ???}
-
-In this study, we investigated whether some attributes obtained via source code quality metrics might influence the attractiveness of a Free
-Software project, and whether both may interact with each other to influence one's perception of quality.
-%Section~\ref{hypotheses} presents the research hypotheses of our study.
-
+This Section presents a source code analysis tool under development by our 
+group called \texttt{Analizo} (Section~\ref{analizo}). It was used 
+to calculate source code metric of 6,773 Free Software projects from SourceForge.net. 
 %
-We analyzed Free Software projects hosted by SourceForge.net  written in C 
-with the goal of characterizing them with respect to 
-structural complexity, lines of code, number of modules, number of downloads, and number of members.
+Also, Section~\ref{sdcollection} presents the criteria used for sample and data collection. 
 %
-%The choice of programming language and metrics for this study was based on the
-%currently mature features of \texttt{Analizo}, a source code analysis tool 
-%% Chris replaced %% our group is developing.
-%under development by our group. Therefore,  Section~\ref{analizo} briefly presents this tool.
-%% Chris asks %% nenhum numero para referendar o status de "mature features" da ferramenta? reports, papers? etc.?
+Finally, Section~\ref{variables} presents the multiple regression model defined 
+to test our hypothesis (Section~\ref{hypotheses}).
 
-%% Chris comments %% Nao sei se a escolha dos projetos e da linguagem de programacao C para o estudo
-% feita em funcao de uma ferramenta eh legal ... Nao seria interessante falar primeiro  que
-% ha muitos projetos em C e poucos estudos e pouco suporte ferramental? Acho que voces comentam isso logo mais ...
-% Daqueles 6% mencionados na secao 1, quantos projetos sao escritos em C?
-
-%Analizo was used to compute the metrics of 6,773 selected projects.  Section~\ref{sdcollection}
-%presents the criteria used for sample and data collection.
-%We accessed  SourceForge.net  to collect data about projects  written in C and that had been downloaded more than once. 
-%This latter filter was adopted to eliminate projects that did not have an actual software under development. 
-
-%Finally Section~\ref{variables}  presents the multiple regression model used ... \TODO{completar}.
-
-%---------------------------
-\subsection{Research Hypotheses} 
-\label{hypotheses}
-
-%\TODO{Por que as hipoteses nao sobem para esta secao anterior e a secao 4 fica apenas para Analise e Hipothesis Testing? Coloquei as hipoteses num arquivo separado para voces decidirem.}
-
-\input{researchHypotheses}
-
-%------------------------
 \subsection{The Analizo Tool}
 \label{analizo}
 
-\texttt{Analizo}\footnote{\url{softwarelivre.org/mezuro/analizo}} is a source code analysis tool. 
-Its architecture was designed 
-to support source code parsing, for different languages, and to
-%% Chris replaced  %%  in a way to let it parse source code written in several languages and 
+\texttt{Analizo}\footnote{\url{softwarelivre.org/mezuro/analizo}} is a 
+multi-language source code analysis tool.
+%
+Its architecture was designed to support source code parsing, for different languages, and to
 report useful information about it.
 
 A basic requirement of our source code analysis tool was the ability to analyze
 source code written in multiple languages.
-%% Chris suggests %% insert something like  "instead of depending on object code only".
 %
 Most existing tools use object code to extract data, making it impossible to process
 projects that do not compile due to failures in either the source code or
 in its dependencies~\cite{hassan05}.
-%% Chris comments : Esse "object-based tools" me confundiu. Talvez usar "tools based on object code".
-In addition, object-based tools are not
+%
+In addition, tools based on object code are not
 capable of analyzing features present only in the source, such as comments.
 %
 To avoid these problems, \texttt{Analizo} is designed to extract the information
 directly from source code parsers.
 
-%% Chris : inverti a ordem das frases e mudei um pouco o estilo  desse paragrafo %%
 \texttt{Analizo} uses \texttt{Doxyparse}\footnote{\url{softwarelivre.org/mezuro/doxyparse}},
-a multi-language source code parser based on Doxygen's internals,
-to parse the source code.
+a multi-language source code parser based on Doxygen's internals, to parse the source code.
 %
 This feature provides \texttt{Analizo} with the potential ability to parse all the languages supported
 by Doxygen\footnote{\url{doxygen.org}},
 but, up to the moment, it has been tested only with C, C++, and Java source code.
 
-%% Chris :  "At that time, " ??? removi, porque nao entendi o porque da expressao.
 \texttt{Analizo} has been fully tested with C source code downloaded from Sourceforge.net projects, 
 supporting the computation of  fourteen metrics:
 \begin{itemize}
@@ -429,29 +407,12 @@ supporting the computation of  fourteen metrics:
 \item \emph{Response for Class} (RFC).
 \end{itemize}
 The correctness of the metrics computation was evaluated by comparing the 
-results provided by Analyzo and other existing 
- %% Chris replaced "tool"
-tools such as
+results provided by Analyzo and other existing tools such as
 %
 CCCC\footnote{\url{cccc.sourceforge.net}},
 Cscope\footnote{\url{cscope.sourceforge.net}},
 Eclipse-Metrics\footnote{\url{metrics.sourceforge.net}},
 and Macxim/Spago4Q\footnote{\url{qualipso.dscpi.uninsubria.it/macxim}}.
-%
-We have also checked other existing extractors such as LDX, CTAGX, and CPPX \cite{hassan05}.
-%% Chris : ??? checked Analizo results against these extractors results?
-
-For this study, we used NM, NPA, NPM, 
-%% Chris replaced LCOM for LCOM4
-LCOM4 and CBO. 
-%% Chris replaced "They are" and removed some text 
-These metrics were originally proposed with the object-oriented paradigm in mind.
-%
-However, it is possible to generalize the concepts of ``class'' and ``method''
-to ``module'' and ``subroutine'', respectively, in order to apply them to
-other programming paradigms.
-%% Chris : citar alguma referencia que aponta para isso?  %%
-%% Chris : compatilizar com a frase na secao de Variables - Among the fourteen source code metrics that \texttt{Analizo} provided, we selected seven for our initial analysis: average of CBO, average of LCOM4, total of LOC, average of NOM, total of NM, average of NPA, and average of NPM.
 
 %--------------------------------
 \subsection{Sample and Data Collection}
@@ -467,19 +428,28 @@ We accessed these databases in November, 2009 and collected data about
 all the projects that matched the following criteria:
 %
 \begin{itemize}
-\item \emph{Source code written in the C language}. By November 2009, \texttt{Analizo} supported 
-the analysis of C source code only; furthermore, there are few academic works that evaluate
-a large number of Free Software projects written in C;  % referencia?? mais facil dizer que a maioria avalia java ou outra ling.?
-%% Chris comments/suggests : talvez inverter a ordem -- poucos trabalhos primeiro
-% ou pelo menos enfatizar a segunda razao
+\item \emph{Source code written in the C language}. 
 %
+In previous works, our groups analyzed the structural complexity of some Free
+Software written in C.
+%%Paulo = referenciar trabalhos do Terceiro/Christina
+%
+Moreover, there are several academic works that evaluate a Free Software projects
+written in Java, for example, according to related work (Section~\ref{related}).
+%
+On the other hand, a lot of Free softwares are written in C. Thus, this
+demand and our experience in to evaluate Free software written in C defined 
+this criteria, since this is the first of our studies relating source code 
+metrics and attractiveness.
+%%Chris: Daqueles 6% mencionados na secao 1, quantos projetos sao escritos em C?
+
 \item \emph{More than one download}.  Projects with no downloads are
 probably either non-development projects, or projects that have just started,
 or are other special cases.
 \end{itemize}
 
-This provided us with a list of 11,433 projects. 
-After this preliminary sampling, the following steps were automatically executed  by scripts developed by our group,
+This provided us with a list of 11,433 projects. After this preliminary sampling,
+the following steps were automatically executed  by scripts developed by our group,
 to perform data collection:
 \begin{enumerate}
 \item Download the code of all the projects. This resulted in the source code for 10,128 projects since
@@ -507,7 +477,6 @@ The complete data set used for this study is available on the Web\footnote{\url{
 %\vspace{-1em}
 \begin{center}
 \begin{table*}[hbt]
-%\scalefont{0.9}
 \centering \caption{Descriptive statistics}
 \begin{tabular}{|l|r|r|r|r|r|r|} \hline
   & \multicolumn{4}{|c|}{Raw} & \multicolumn{2}{|c|}{Logarithm}\\ \hline
@@ -530,41 +499,38 @@ Dls & 6 & 9,000,000 & 957,000.00 & 17,760,000.00 & 8.20 & 2.66 \\ \hline
 
 \end{tabular}
 \label{table:statistics}
-%\scalefont{1}
 \end{table*}
 \end{center}
-\vspace{-1em}
+%\vspace{-1em}
 
 %--------------------------------
 \subsection{Variables}
 \label{variables}
 
-Among the fourteen source code metrics that \texttt{Analizo} provided, we selected seven for our initial analysis: 
-average of CBO, average of LCOM4, total of LOC, average of NOM, total of NM, average of NPA, and average of NPM.
-
-%Firstly, since COF, DIT, NOC, RFC, and ACC (used to calculate COF) are metrics that originally offer information about source code attributes in Object-Oriented paradigm, there is a need to adaptation them to the procedural paradigm.
-COF, DIT, NOC, RFC and ACC (used to calculate COF) metrics are not used because the
-source code attributes they measure are not useful for this study. 
-%\TODO{isso aqui tem explicar melhor. parece que vc vai dizer pq nao adotamos mas acaba nao dizendo. }
-%\TODO{Chris - nao expliquei, mas cortei texto. }
-
-AMZ\_Size (\emph{lines per method}) and LOC
-measure number of lines. However, AMZ\_Size is a module-level metric and total 
-LOC is a global-level metric that includes LOC of methods, and so AMZ\_Size effect is captured through LOC. Thus,
-we did not use AMZ\_Size in our statistical analysis.
+Among the fourteen source code metrics that \texttt{Analizo} provided, 
+we selected seven for our initial analysis: 
 %
-Additionally, we were only interested in \emph{public attributes} (NPA) and
-we did not use \emph{number of attributes} (NOA), because, in this study,
-we analyzed information on a project level (sum or average of metrics for all modules).
+total LOC, total NM,average NOF, average NPV, average NPF, average LCOM4,
+and average CBO.
 %
-In any case, both, AMZ\_Size and NOA, can give important information when a module is
-individually analyzed.
+Since it is possible to generalize the concepts of ``class'' and ``method''
+to ``module'' and ``function'', respectively, NOF, NPV, NPF, LCOM4 and CBO 
+were applied to the procedural paradigm of the C language. 
+%%\TODO Chris pediu referencia AQUI, mas nao vou ter tempo. 
+%%Talvez o Terceiro tenha. Antes a ideia disso estava numa nota de rodape
+
+In cases of ACC, AMZ\_Size, COF, DIT, NOC, NOV, and RFC metrics are not used 
+because the source code attributes that they measure are not in the scope of this study.
+%
+We needed to limit the scope to accomplish the study. Thereby, we selected an initial 
+subset of source code metrics based in the criteria that we wanted a simple
+statistical model with size and complexity structural metrics. 
+%
+Therefore, in this first study, we disregard some other metrics.
 
 %\vspace{-3em}
 \begin{center}
-%\begin{table*}[hbt]
-\begin{table*}[tb]
-%\scalefont{0.9}
+\begin{table*}[hbt]
 \centering \caption{Parametric Correlations: Pearson}
 \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|} \hline
 
@@ -599,7 +565,6 @@ DLs & 0.129 & 0.107 & 0.156 & 0.344 & 0.410 & 0.386 & 0.380 & 0.365 & 0.676 & -
 %\vspace{-1em}
 \begin{center}
 \begin{table*}[bt]
-%\scalefont{0.9}
 \centering \caption{Non-Parametric Correlations: Spearman}
 \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|} \hline
 
@@ -627,14 +592,12 @@ DLs & 0.169 & 0.162 & 0.196 & 0.320 & 0.392 & 0.363 & 0.362 & 0.347 & 0.598 & -
 \\ \hline
 \end{tabular}
 \label{spearman}
-%\scalefont{1}
 \end{table*}
 \end{center}
 
 %\vspace{-1em}
 \begin{center}
 \begin{table*}[bt]
-%\scalefont{0.9}
 \centering \caption{Non-Parametric Correlations: Kendall}
 \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|} \hline
 
@@ -662,7 +625,6 @@ DLs & 0.114 & 0.109 & 0.132 & 0.219 & 0.270 & 0.249 & 0.248 & 0.237 & 0.471 & -
 \\ \hline
 \end{tabular}
 \label{kendall}
-%\scalefont{1}
 \end{table*}
 \end{center}
 %\vspace{-4em}
@@ -671,23 +633,23 @@ Nevertheless, in the first stage of our statistical analysis, LOC, NOM, NPA and 
 showed high correlation between each other, according to Pearson's
 parametric correlations shown in the Table~\ref{pearson}.
 %
-Therefore, since all these metrics represent a similar concept, we selected one of them -- LOC -- 
+Since all these metrics represent a similar concept, we selected one of them -- LOC -- 
 for our statistical analysis to reduce multicollinearity.
 
-We have also analyzed the Spearman and Kendal non-parametric correlations, given that
-some of our variables are not normally distributed. 
-%\TODO{Chris : Tabelas estao com comment -- que tal citar algum site ou tech. report que contenha todas elas?}
-
+We have also analyzed the Spearman and Kendal non-parametric correlations,
+Table~\ref{spearman} and Table~\ref{kendall} respectively, given that some of
+our variables are not normally distributed. 
 %
 In our analysis, we observed that after transforming our variables in their logarithmic form, 
-Pearson correlations performed just as well as the non-parametric indices. 
-Thus, we chose the Pearson parametric correlation because it represents the most commonly used form of correlation index, 
-and it also provides the basis for the regression analysis we perform later. 
-That way, we can maintain consistency. %% Chris wrt what?
+Pearson correlations performed just as well as the non-parametric indices.
+%
+Thus, we chose the Pearson parametric correlation because it represents the most 
+commonly used form of correlation index, and it also provides the basis for the 
+regression analysis we perform later. That way, we can maintain consistency. 
+%% Chris wrt what?
 
-Accordingly, we ended up considering LOC and NM as size metrics. Theoretically, 
-%\TODO{essa frase ta meio perdida aqui e comeca com um accordingly que nao faz muito sentido}
-the more LOC, the more NM.
+According to analysis described above, we ended up considering LOC and NM 
+as size metrics. Theoretically, the more LOC, the more NM.
 %
 However, it is possible to have more lines of code without having more modules, by
 adding code into existing modules. Also, a software could have more modules
@@ -696,7 +658,7 @@ but keep the number of lines of code when refactoring is applied.
 In conclusion, they measure different kinds of size metrics, more or less
 influenced by programming languages and coding styles, respectively.
 %
-Thereby, we collected both the LOC and NM metrics. %% Chris : I put the metrics
+Thereby, we collected both the LOC and NM metrics.
 
 Furthermore, we understood that \emph{number of modules} (NM) did not highly
 correlate with the others, since we considered a high correlation when the
@@ -704,24 +666,21 @@ Pearson's correlations' values were approximately 0.900 or higher,
 emphasized in Table~\ref{pearson}.
 %
 This indicates that these metrics represent (partly) the same attributes, which did not
-occur with NM when compared to others, using our criteria.  %% Chris: nao entendi.
+occur with NM when compared to others, using our criteria.
+%% Chris: nao entendi.
 
 Finally, CBO and LCOM4 were multiplied to obtain the value of our structural
 complexity metric (SC), explained in Section~\ref{background}.
 %
 These three metrics did not show high correlations with other metrics.
 %
-As expected, SC showed a direct correlation with both. However, it was not 
-%\TODO{reveja esse direct. o que vc quer dizer, positiva?}
+As expected, SC showed a positive correlation with both. However, it was not 
 as high as the others were, because CBO and LCOM4 had a low correlation
 with each other. This means that SC, statistically, represents different attributes
 when compared to CBO and LCOM4, thus endorsing  the theory that CBO and LCOM4 together
-offer other information. 
-%\TODO{nao entendi o other. =different?}
+offer different information. 
 
-In summary, 
-%% Chris removed %% according to what was introduced in Section~\ref{background} and explained in this section,
-our multiple regression model ended up with the following variables:
+In summary, our multiple regression model ended up with the following variables:
 
 \begin{itemize}
 \item \textbf{Independent variables (source code metrics)}:
@@ -759,9 +718,47 @@ Consequently, SC, LOC and MN metrics, which represent the source code attributes
 are the independent variables -- the influencers of attractiveness.
 
 %----------------------------------------------------------------------
+
+\subsection{Research Hypotheses} 
+\label{hypotheses}
+...
+%
+Accordingly, we formulated three hypotheses:
+
+\emph{H1: Free Software projects with higher structural complexity have
+lower attractiveness.}
+%
+The higher the software complexity, the more difficult
+it is to understand its source code for maintenance and evolution purposes.
+This leads to an increase in the maintenance effort, and makes it more
+difficult to attract new members and users for the project. Over time, with
+less members and users, the project may lose its ability to add new features
+and fix bugs and, consequently, its ability to evolve and meet the user's
+changing requirements.
+
+\emph{H2: Free Software projects with more lines of code have
+higher attractiveness.}
+%
+To some extent, lines of code reflect the amount of features of the project and
+the amount of work that have been put into it. Therefore, projects with
+more lines of code will usually attract more users (since they have more
+features) and developers (since they offer more opportunities for
+contribution).
+
+\emph{H3: Free Software projects with a higher number of modules have
+higher attractiveness.}
+%
+The number of modules may indicate the project size and the possibility
+of working in parallel in independent modules. More modules may indicate a
+concern with good design, with better modularization, which facilitates contributions.
+This attracts more members, who can
+write more features and fix more bugs, which would then attract more users.
+
+
+%------------------------
+
 \section{Hypotheses Testing}   
 \label{hypothesesTesting}
-%\TODO{Coloquei como secao}
 
 
 We specified a multiple regression model to explain the relationships 
@@ -807,7 +804,6 @@ $R$ & \multicolumn{4}{|c|}{0.425} & \multicolumn{4}{|c|}{0.348}\\ \hline
 $R^2$ & \multicolumn{4}{|c|}{0.180} & \multicolumn{4}{|c|}{0.121}\\ \hline
 \end{tabular}
 \label{table:regression}
-%\scalefont{1}
 \end{table*}
 \end{center}
 %\vspace{-2em}
@@ -824,22 +820,30 @@ size of the influence of each metric on each attractiveness indicator.
 %
 As we can see in Table~\ref{table:regression}, lines of code is more strongly
 correlated to downloads and members than structural complexity and number of modules,
-according to the standardized beta (\emph{Std. $\beta$}). Standardized betas are calculated to perform comparisons between variables that are measured using different scales (e.g., lines of code and structural complexity). One cannot compare regular beta coefficients without first standardizing them.
+according to the standardized beta (\emph{Std. $\beta$}). 
+%
+Standardized betas are calculated to perform comparisons between variables that
+are measured using different scales (e.g., lines of code and structural complexity).
+One cannot compare regular beta coefficients without first standardizing them.
 %
 Moreover, structural complexity has a negative correlation with attractiveness,
 as expected. Noteworthy is that T-test and P (probability) values represent whether a source code
 metric is a statistically significant predictor or influencer of attractiveness indicators.
 %
 For downloads, the number of modules is not significant because
-its P-value is greater than 0.05. Finally, in the last line of
-Table \ref{table:regression}, R-squared values indicate the percentage of attractiveness (users and developers) variance that
-this set of source code metrics is capable of explaining. So, roughly speaking, a R-squared of 20 percent indicates that a set of predictors can explain 20 percent of a dependent variable.
+its P-value is greater than 0.05. 
+%
+Finally, in the last line of Table \ref{table:regression}, R-squared values
+indicate the percentage of attractiveness (users and developers) variance that
+this set of source code metrics is capable of explaining. 
+%
+So, roughly speaking, a R-squared of 20 percent indicates that a set of
+predictors can explain 20 percent of a dependent variable.
 %
 We obtained the following equations:
 
 %\vspace{-1.5em}
 \begin{displaymath}
-%\scalefont{0.9}
 \begin{array}{lll}
 downloads = & 1.551 - 0.286\times log(SC) \\
             & + 0.856\times log(LOC) + 0.008\times log(NM) \\
@@ -847,7 +851,6 @@ downloads = & 1.551 - 0.286\times log(SC) \\
 members = & -0.668 - 0.033\times log(SC) \\
             & + 0.126\times log(LOC) + 0.087\times log(NM)
 \end{array}
-%\scalefont{1}
 \end{displaymath}
 %\vspace{-1em}
 
@@ -861,7 +864,7 @@ explained by that set of independent variables.
 In our analysis, the $R$-value indicated that source code metrics explain 18\% ($R^2 = 0.180$) of the number of downloads and 12\% ($R^2 = 0.121$) of the number of members. These are significant values for the social context that an adoption or volunteering of a free software projects are involved.
 
 
-%\subsection{H1} ???
+\subsection{Hypothesis 1}
 The data analysis supports our first hypothesis 
 (\emph{ H1: Free Software projects with higher structural complexity have lower attractiveness.}).
 In fact, structural complexity has a negative influence on attractiveness.
@@ -889,7 +892,7 @@ a project is less active.
 
 %\TODO{usar with ou and quando citar beta e p?}
 
-%\subsection{H2} ???
+\subsection{Hypothesis 2}
 
 The second hypothesis (\emph{H2: Free Software projects with more
 lines of code have higher attractiveness}) is also supported by our data.
@@ -908,7 +911,7 @@ this metric for members is 0.126 ($p<0.001)$. For both downloads and
 members, lines of code is the metric with the highest influence, because
 it is associated with software features and project size.
 
-%\subsection{H3} ???
+\subsection{Hypothesis 3}
 The most interesting results were related to our third hypothesis
 (\emph{H3: Free Software projects with a higher number of modules have
 higher attractiveness}).
@@ -948,7 +951,7 @@ complexity as low as possible and modularity at a good level.
 
 %----------------------------------------------------------------------------
 \section{Related Work}
-\label{relatedWork}
+\label{related}
 
 Large Free Software projects such as Debian GNU/Linux, GNOME, and KDE have invested in the
 creation of dedicated teams for quality assurance. These efforts involve everything
@@ -966,8 +969,7 @@ of the source code \emph{per se}.
 
 Barkmann \emph{et al.} \cite{Barkmann2009} analyzed 146 Free Software projects
 written in Java, identifying the correlation between a set of object-oriented
-metrics and their theoretical typical values. 
-%\TODO{typical=ideal?}
+metrics and their theoretical ideal values. 
 %
 However, in their work the values of source code metrics were not associated
 with problems or attractiveness of Free Software projects.
