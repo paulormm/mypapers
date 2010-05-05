@@ -49,9 +49,9 @@ code metrics. This suggests that measurable attributes of the project
 source code somehow affect the decision to contribute and adopt a free software project.
 %
 The findings described in this study show that it is relevant for project leaders
-to monitor source code quality, most specifically a few objective metrics, since
-these can have a positive influence in their chances of forming a community of
-contributors and users around the software, enabling further enhancement in its quality.
+to monitor source code quality, particularly a few objective metrics, since
+these can have a positive influence in projects chances of forming a community of
+contributors and users around their software, enabling further enhancement in quality.
 \end{abstract}
 
 %\pagebreak
@@ -174,8 +174,7 @@ Conclusions and future research directions are discussed in Section~\ref{conclus
 %Tambem achei que misturou apresentacao de conceitos com algumas decisoes do estudo
 %talvez algum texto possa ser movido %para o final ou retirado.
 
-In this section we show the definitions of selected source code metrics
-selected (Section~\ref{scm}) and concept of attractiveness and its proxies (Section~\ref{attract})
+In this section we show the definitions of selected source code metrics (Section~\ref{scm}) and the concept of attractiveness and its proxies (Section~\ref{attract})
 to build a statistical model that represents the relationships proposed.
 
 \subsection{Source code metrics}
@@ -259,7 +258,7 @@ modules of the system, since a change in one module may have an impact in
 all other modules that are coupled to it.
 %
 In other words, if coupling is high, the software tends to be less flexible,
-more difficult to adapt, and more difficult to understand.
+more difficult to adapt and to understand.
 %
 An objective metric for measuring coupling is \emph{Coupling Between Objects} (CBO),
 also proposed by Chidamber and Kemerer. CBO measures how many modules are
@@ -279,9 +278,9 @@ product of coupling and cohesion as a metric is positively correlated to
 the maintenance effort.
 
 In conclusion, seven metrics were used in our study, selected according to 
-criteria shown in Section~\ref{researchDesign}, on a statistical model for our study.
+criteria shown in Section~\ref{researchDesign}, to build an statistical model.
 %
-In particular, we use the product of coupling (CBO) and cohesion (LCOM4) as
+Specifically, we use the product of coupling (CBO) and cohesion (LCOM4) as
 our metric of structural complexity (SC)~\cite{darcy2005}.
 
 \subsection{Attractiveness} 
@@ -296,7 +295,7 @@ our metric of structural complexity (SC)~\cite{darcy2005}.
 
 Attractiveness is the capacity of bringing users and developers to a project.
 %
-A Free Software project is as much attractive as it has the ability to interest 
+A Free Software project is as attractive as it has the ability to be appealing to 
 potential users and developers. They will later use the software and, ultimately, 
 participate on tasks to improve the project \cite{Santos2010}.
 
@@ -304,63 +303,59 @@ In our study, the concept of attractiveness and its proxies are
 based on Santos Jr.'s attractiveness model~\cite{Santos2010},
 one of our previous works.
 %
-In this work is shown a research and measurement model for attractiveness,
-presented in Figure~\ref{attractiveness}, that we started to expand and 
-to adapted to our hypothesis about source code attributes and attractiveness.
+In this work, it is presented a research model for attractiveness,
+shown in Figure~\ref{attractiveness}, that we started to expand and 
+to adapted to our hypotheses about source code attributes and attractiveness.
 %
-This model defined project characteristics that influence 
-its attractiveness, attractiveness indicators, 
-and consequences of attractiveness (e.g., levels of activity, efficiency, 
+This model specified project characteristics that influence 
+its attractiveness, and the consequences of attractiveness (e.g., levels of activity, efficiency, 
 likelihood of task completion, time for task completion, 
 and software quality)~\cite{Santos2010}.
 
 
-Originally, the project characteristics -- its typical origins -- proposed were:
+Originally, the project characteristics proposed were:
 \begin{itemize}
 %
 \item \emph{License Type} that a software was available such as GPL, BSD, 
 and Mozilla Public.
 %
-The license influences the use and distribution of project and its rules for 
-modifications because it regulates what can and cannot be done with the
-source code and generated product~\cite{Santos2010}.
+The license influences the use and distribution of a project, and defines the rules for 
+creating derivative works, regulating what can and cannot be done with the
+source code~\cite{Santos2010}. These restrictions impact people's motivations to use and develop the free software.
 
 %
-\item \emph{Intended audience} that is the kind of users (e.g., beginner, advanced)
-and members (e.g., system administrator, Java programmers) of project.
+\item \emph{Intended audience} is the type of users (e.g., beginner, advanced)
+and members (e.g., system administrator, Java programmers) a project aims at.
 %
-Audience can influence the number of potential developers~\cite{johnson2002}.
+Audience can influence the number of potential developers for it expands or shrinks the target population size~\cite{johnson2002}.
 %
-However, audiences type can attract specific members, which define its expertise
+Moreover, specific types of users attract specific members, which define their expertise
 and likelihood to contribute~\cite{Santos2010}.
 
 %
-\item \emph{Project type} refers a specific area that a projects might be related 
-such as genealogy, payroll, browsing, games, scientific, etc~\cite{Crowston2002}.
+\item \emph{Project type} refers to the specific area that a project is related, 
+such as genealogy, payroll, browsing, games, scientific, etc~\cite{Crowston2002}. This represents the application domain and influences attractiveness for marketing reasons normally known as niches. Some niches have more volunteer labor (and user base) available than others. Moreover, some application domains have more competing (similar) projects than others, making it harder for a project to stand out as a viable option for use~\cite{johnson2002}.
 %
-Users focus on projects they judge to be more related to their work
-and needs~\cite{johnson2002}, thereby project type influences their activities.
-%
-\item \emph{Life-cycle stage} -- development status -- that the software 
-versions is available, for example, unstable, testing, production, and mature.
+\item \emph{Life-cycle stage} represents the development status that the software 
+versions available are. That could be, for example, unstable, testing, beta, production, and mature.
 %
 This status can influence developer's decisions to join and contribute to a
-project~\cite{Santos2010}, what can affect members' motivations to release a
-new version~\cite{raja2006,Stewart2006}. 
+project, and a user decision to adopt a software~\cite{Santos2010}. It also can affect members' motivations at work to release a
+new version, affecting productivity rates~\cite{raja2006,Stewart2006}. 
 
 \end{itemize}
 
-Therefore, we are proposing to insert source code attributes as a project
+We are proposing to insert source code attributes as a project
 characteristics in this theoretical cause and effect model of Free Software
 attractiveness, showed in Figure~\ref{attractiveness}.
 %
-For this, in ours study, we defined a simple (intermediary) attractiveness model
+For this, we defined a simple (intermediary) attractiveness model
 to observe individually the influence of source code attributes on the Free
 Software attractiveness, presented in Figure~\ref{attractiveness2}.
 %
-In summary, a new cause that can partially explain attractiveness. We did not
-deal to consequences of attractiveness when we added source code attributes as
-a cause.
+In summary, a new cause that can partially explain attractiveness is being proposed. We did not
+deal with the consequences of attractiveness when we added source code attributes as
+a cause. But we expect that it would work in the same causal chain manner shown in Figure~\ref{attractiveness}.
 
 \begin{figure}[!t]
 \centering
@@ -369,44 +364,40 @@ a cause.
 \label{attractiveness2}
 \end{figure}
 
-
-The attractiveness indicators can be estimated by the number of people that
-joined the project and the number of software downloads.
 %
-This because before a Free Software project can receive failure reports, bug fixes, 
+Before a Free Software project can receive failure reports, bug fixes, 
 and new features, it should be attractive to volunteers, who normally first
-join the project and later provide contributions.
+use and join the project, providing contributions later.
 %
 Over time, these contributions affect the number of downloads and bring more 
 members, creating a positive feedback loop.
 %
-Thus, we measured attractiveness based on the two empirical indicators:
+Thus, we estimated attractiveness based on two of its empirical indicators:
 \begin{enumerate}
-\item \emph{number of downloads} is are presentation of the number of people
-interested in the software.
+\item \emph{number of downloads} represents the number of people
+interested in using the software.
 \item \emph{number of members} represents the number of contributors to the project.
 \end{enumerate}
 
 
-One should note that the number of downloads and number of members
-at SourceForge.net are simply proxies to the actual number of users and number of
-developers in the project, respectively.
+One should note that the numbers of downloads and members
+at SourceForge.net are proxies to the actual numbers of users and developers of the project, respectively.
 %
-On the other hand, this study explored a large number of projects and applied 
+This study explored a large number of projects and applied 
 the same criteria uniformly to all of them. 
 %
-Thereby, we did not find in previous works other proxies that can represent 
+Although that is a limitation, we did not find in previous works other proxies that can represent 
 number of users and number of developers in a large sample of projects.
 
-In conclusion, the meaning of ``successful'' to Free Software projects were
-measured for different ways in previous rechearches:
+The meaning of ``successful'' to Free Software projects were
+observed from different perspectives in previous researches:
 %
 (i) source code modularity (Shaikh and Cornford 2003);
 (ii) number of lines of code generated (Mockus et al. 2000);
 (iii) velocity of closing bugs (Stewart and Gosain 2006);
 (iV) ability of a project to advance through development phases
 (e.g., from alpha to beta to stable)~\cite{raja2006,Crowston2002};
-(V) the number of downloads (Balijepally et al. 2009);
+(V) number of downloads (Balijepally et al. 2009);
 (vi) number of members (Crowston and Howison (2006).
 
 Nos entendemos que essas medidas individualmente nao representem sucesso de forma completa, mas sim uma das formas de ajudar a chegar ao sucesso (ou mante-lo) quando analizadas juntas. Entretanto, no contexto do software livre, com o codigo-fonte sendo considerado o principal artefatos do projeto, levantamos a hipotese de que os atributos do codigo-fonte podem influenciar na atratividade do projeto, pois determinadas caracteristicas do codigo-fonte podem levar a mais contribuicoes ao software, atraindo mais usuarios e membros.
@@ -533,7 +524,7 @@ work reported in section~\ref{related}).
 Given this disparity between the actual free software ecosystem and
 the research that address it, and our previous experience with
 analysis of free software written in C \cite{terceiro2009}, we
-choose to limit the analysis in this work to such projects as well.
+chose to limit the analysis in this work to such projects as well.
 %
 This is our first study relating source code metrics and
 attractiveness, and in the future we plan to include other
@@ -728,7 +719,7 @@ Nevertheless, in the first stage of our statistical analysis, LOC, NOM, NPA and 
 showed high correlation between each other, according to Pearson's
 parametric correlations shown in the Table~\ref{pearson}.
 %
-Highly correlated variables indicate that they are representations (partly) of
+Highly correlated variables indicate that they are representations of
 a same attribute, thereby making it unnecessary to use more than one.
 %
 Since all these metrics represent a similar concept, we selected one of them -- LOC -- 
