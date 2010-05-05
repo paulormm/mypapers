@@ -108,7 +108,7 @@ and developers and benefiting from a Bazaar style of development
 Santos Jr. \emph{et al.}~\cite{Santos2010}, in one of our previous works,
 defined a theoretical model for  attractiveness as a crucial construct for
 Free Software projects, proposing their
-(i) typical origins (e.g., license type, intended audience, type of project,
+(i) typical origins (e.g., license type and intended audience, type of project,
 and development status);
 (ii) indicators (e.g., number of members and downloads);
 (iii) consequences (e.g, levels of activity, efficiency, likelihood of task
@@ -286,7 +286,13 @@ our metric of structural complexity (SC)~\cite{darcy2005}.
 
 \subsection{Attractiveness} 
 \label{attract}
-%\TODO{Refazer esta secao}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[scale=.45]{attractiveness}
+\caption{Attractiveness research and measurement model}
+\label{attractiveness}
+\end{figure*}
 
 Attractiveness is the capacity of bringing users and developers to a project.
 %
@@ -294,22 +300,93 @@ A Free Software project is as much attractive as it has the ability to interest
 potential users and developers. They will later use the software and, ultimately, 
 participate on tasks to improve the project \cite{Santos2010}.
 
-Attractiveness can be estimated by the number of people that
+In our study, the concept of attractiveness and its proxies are
+based on Santos Jr.'s attractiveness model~\cite{Santos2010},
+one of our previous works.
+%
+In this work is shown a research and measurement model for attractiveness,
+presented in Figure~\ref{attractiveness}, that we started to expand and 
+to adapted to our hypothesis about source code attributes and attractiveness.
+%
+This model defined project characteristics that influence 
+its attractiveness, attractiveness indicators, 
+and consequences of attractiveness (e.g., levels of activity, efficiency, 
+likelihood of task completion, time for task completion, 
+and software quality)~\cite{Santos2010}.
+
+
+Originally, the project characteristics -- its typical origins -- proposed were:
+\begin{itemize}
+%
+\item \emph{License Type} that a software was available such as GPL, BSD, 
+and Mozilla Public.
+%
+The license influences the use and distribution of project and its rules for 
+modifications because it regulates what can and cannot be done with the
+source code and generated product~\cite{Santos2010}.
+
+%
+\item \emph{Intended audience} that is the kind of users (e.g., beginner, advanced)
+and members (e.g., system administrator, Java programmers) of project.
+%
+Audience can influence the number of potential developers~\cite{johnson2002}.
+%
+However, audiences type can attract specific members, which define its expertise
+and likelihood to contribute~\cite{Santos2010}.
+
+%
+\item \emph{Project type} refers a specific area that a projects might be related 
+such as genealogy, payroll, browsing, games, scientific, etc~\cite{Crowston2002}.
+%
+Users focus on projects they judge to be more related to their work
+and needs~\cite{johnson2002}, thereby project type influences their activities.
+%
+\item \emph{Life-cycle stage} -- development status -- that the software 
+versions is available, for example, unstable, testing, production, and mature.
+%
+This status can influence developer's decisions to join and contribute to a
+project~\cite{Santos2010}, what can affect members' motivations to release a
+new version~\cite{raja2006,Stewart2006}. 
+
+\end{itemize}
+
+Therefore, we are proposing to insert source code attributes as a project
+characteristics in this theoretical cause and effect model of Free Software
+attractiveness, showed in Figure~\ref{attractiveness}.
+%
+For this, in ours study, we defined a simple (intermediary) attractiveness model
+to observe individually the influence of source code attributes on the Free
+Software attractiveness, presented in Figure~\ref{attractiveness2}.
+%
+In summary, a new cause that can partially explain attractiveness. We did not
+deal to consequences of attractiveness when we added source code attributes as
+a cause.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[scale=.45]{attractiveness2}
+\caption{Attractiveness model: adapted proposal}
+\label{attractiveness2}
+\end{figure}
+
+
+The attractiveness indicators can be estimated by the number of people that
 joined the project and the number of software downloads.
 %
-Before a Free Software project can receive failure reports, bug fixes, 
-and new features, it should be attractive to volunteers, who normally first join the project 
-and later provide contributions.
+This because before a Free Software project can receive failure reports, bug fixes, 
+and new features, it should be attractive to volunteers, who normally first
+join the project and later provide contributions.
 %
 Over time, these contributions affect the number of downloads and bring more 
 members, creating a positive feedback loop.
+%
+Thus, we measured attractiveness based on the two empirical indicators:
+\begin{enumerate}
+\item \emph{number of downloads} is are presentation of the number of people
+interested in the software.
+\item \emph{number of members} represents the number of contributors to the project.
+\end{enumerate}
 
-In our study, the concept of attractiveness and its proxies are
-based on Santos Jr.'s attractiveness model~\cite{Santos2010}.
-We measured attractiveness based on the two empirical indicators: 
-(i) the number of downloads is are presentation of the number of people interested
-in the software and (ii) the number of members represents the number of 
-contributors to the project.
 
 One should note that the number of downloads and number of members
 at SourceForge.net are simply proxies to the actual number of users and number of
@@ -321,30 +398,18 @@ the same criteria uniformly to all of them.
 Thereby, we did not find in previous works other proxies that can represent 
 number of users and number of developers in a large sample of projects.
 
-\begin{figure*}[!t]
-\centering
-\includegraphics[scale=.4]{attractiveness}
-\caption{Simulation Results}
-\label{Attractiveness model: include}
-\end{figure*}
-
-o conceito de atratividade em projetos de software livre foi desenvolvido como um construtor latente que se expressa empiricamente de tres formas: (a) um projeto de software livre deve trazer visitantes ao portal do projeto; (b) os administradores do projeto esperam que os visitantes facam o download do software, potencialmente se tornando usuarios e/ou desenvolvedores da aplicacao; e (c) o visitante-usuario do software pode se tornar membro do projeto, habilitando-se a contribuir para ele, ajudando assim os estrategistas a atingirem seus objetivos mais ambiciosos. Eh com o intuito de explicar e maximizar o numero de (1) visitas, (2) downloads e (3) membros que o estudo das causas de atratividade se justifica.
-
-Santos Jr. e Pearson apresentaram uma serie de testes estatisticos onde projetos com diferentes caracteristicas tiveram seus indices de atratividade comparados, procurando indicativos de que estas caracteristicas poderiam influenciar atratividade. Entre essas caracteristicas estao a(s) licenca(s) sob a qual o software foi disponibilizado a comunidade (e.g., GPL ou BSD), o publico-alvo do projeto (e.g., desenvolvedores ou usuarios-finais), os estagios das versoes do software disponibilizadas no portal do projeto (e.g., beta ou producao), e o tipo do projeto (e.g., cientifico ou jogo), ver Figura 1 para detalhes do modelo teorico. Em suma, neste doutorado sanduiche, queremos inserir no modelo teorico de causa e efeito de atratividade os atributos do codigo-fonte como uma das caracteristicas dos projetos de software livre correlacionadas com a atratividade.
-
-Na literatura, o significado de sucesso em projetos de software livre ja foi medido de diversas formas como: numero de downloads (Crowston et al. 2004; Krishnamurthy 2002; Stewart et al. 2006); habilidade de avancar nas fases de desenvolvimento (Crowston et al. 2002; Raja et al. 2006); ou ainda como a propria quantidade de membros de um projeto (Crowston et al. 2006; Koch 2004). Nos nao acreditamos que estas medidas representem sucesso de forma completa, mas sim uma das formas de ajudar a chegar ao sucesso (ou mante-lo). Entretanto, no contexto do software livre, com o codigo-fonte sendo considerado o principal artefatos do projeto, levantamos a hipotese de que os atributos do codigo-fonte podem influenciar na atratividade do projeto, pois determinadas caracteristicas do codigo-fonte podem levar a mais contribuicoes ao software, atraindo mais usuarios e membros.
-
-Esse e um primeiro passo em nossa analise de milhares de projetos de software livre atraves da qual queremos investigar a tese de que a escrita de codigo-fonte com determinadas caracteristicas (e.g., baixo acoplamento e alto coesao) tambem leva a projetos de maior sucesso.
-
-
-%Attractiveness is a human perception \cite{Santos2010}. 
-%Many factors may influence a user to download a piece of software, such as a
-%recommendation from a friend, a hint from a magazine, a fancy Web site, work
-%needs, or new features.
+In conclusion, the meaning of ``successful'' to Free Software projects were
+measured for different ways in previous rechearches:
 %
-%Similarly, the decision of a developer to support a Free Software project involves
-%several subjective matters such as favorite programming language/paradigm and
-%potential user community size.
+(i) source code modularity (Shaikh and Cornford 2003);
+(ii) number of lines of code generated (Mockus et al. 2000);
+(iii) velocity of closing bugs (Stewart and Gosain 2006);
+(iV) ability of a project to advance through development phases
+(e.g., from alpha to beta to stable)~\cite{raja2006,Crowston2002};
+(V) the number of downloads (Balijepally et al. 2009);
+(vi) number of members (Crowston and Howison (2006).
+
+Nos entendemos que essas medidas individualmente nao representem sucesso de forma completa, mas sim uma das formas de ajudar a chegar ao sucesso (ou mante-lo) quando analizadas juntas. Entretanto, no contexto do software livre, com o codigo-fonte sendo considerado o principal artefatos do projeto, levantamos a hipotese de que os atributos do codigo-fonte podem influenciar na atratividade do projeto, pois determinadas caracteristicas do codigo-fonte podem levar a mais contribuicoes ao software, atraindo mais usuarios e membros.
 
 
 %-------------------------------------------------------------
@@ -756,14 +821,13 @@ are the independent variables -- the influencers of attractiveness.
 In this first study about the relationships between source code metrics and
 attractiveness, we investigated whether two attributes -- structural complexity
 and size -- obtained via four source code metrics might influence the attractiveness
-of a Free Software project.
+of Free Software projects.
 %
-Thereby, we can observe whether both may interact with each other to influence
-one's perception of quality.
+Thereby, we can later observe whether these attributes influence people's 
+perception of quality as consequence of attractiveness.
 %
-Therefore, according to the selection of metrics that provide information
-on structural complexity and size, i.e., the source code attributes defined 
-in scope of this study, we formulated three hypotheses:
+Therefore, according to the metrics chosen to represent structural
+complexity and size, we formulated three hypotheses:
 
 \begin{enumerate}
 \item \emph{Free Software projects with higher structural complexity have
