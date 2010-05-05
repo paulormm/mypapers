@@ -46,7 +46,7 @@ Free Software projects from the SourceForge.net repository.
 %
 The results indicated that attractiveness is indeed correlated to some source
 code metrics. This suggests that measurable attributes of the project
-source code somehow affect the decision to contribute and adopt a free software project.
+source code somehow affect the decision to contribute and adopt a Free Software project.
 %
 The findings described in this study show that it is relevant for project leaders
 to monitor source code quality, particularly a few objective metrics, since
@@ -288,8 +288,9 @@ our metric of structural complexity (SC)~\cite{darcy2005}.
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[scale=.45]{attractiveness}
-\caption{Attractiveness research and measurement model}
+\includegraphics[scale=.45]{figure/attractiveness3}
+\caption{Attractiveness research and measurement model
+-- adapted from Santos Jr.~\cite{Santos2010}}
 \label{attractiveness}
 \end{figure*}
 
@@ -305,7 +306,8 @@ one of our previous works.
 %
 In this work, it is presented a research model for attractiveness,
 shown in Figure~\ref{attractiveness}, that we started to expand and 
-to adapted to our hypotheses about source code attributes and attractiveness.
+to adapted to our hypotheses about source code attributes and attractiveness,
+emphasized in Figure~\ref{attractiveness}.
 %
 This model specified project characteristics that influence 
 its attractiveness, and the consequences of attractiveness (e.g., levels of activity, efficiency, 
@@ -321,27 +323,42 @@ and Mozilla Public.
 %
 The license influences the use and distribution of a project, and defines the rules for 
 creating derivative works, regulating what can and cannot be done with the
-source code~\cite{Santos2010}. These restrictions impact people's motivations to use and develop the free software.
+source code~\cite{Santos2010}. These restrictions impact people's motivations
+to use and develop the Free Software.
 
 %
 \item \emph{Intended audience} is the type of users (e.g., beginner, advanced)
 and members (e.g., system administrator, Java programmers) a project aims at.
 %
-Audience can influence the number of potential developers for it expands or shrinks the target population size~\cite{johnson2002}.
+Audience can influence the number of potential developers for it expands or
+shrinks the target population size~\cite{johnson2002}.
 %
 Moreover, specific types of users attract specific members, which define their expertise
 and likelihood to contribute~\cite{Santos2010}.
 
 %
-\item \emph{Project type} refers to the specific area that a project is related, 
-such as genealogy, payroll, browsing, games, scientific, etc~\cite{Crowston2002}. This represents the application domain and influences attractiveness for marketing reasons normally known as niches. Some niches have more volunteer labor (and user base) available than others. Moreover, some application domains have more competing (similar) projects than others, making it harder for a project to stand out as a viable option for use~\cite{johnson2002}.
+\item \emph{Type of project} refers to the specific area that a project is related, 
+such as genealogy, payroll, browsing, games, scientific, etc~\cite{Crowston2002}.
 %
-\item \emph{Life-cycle stage} represents the development status that the software 
-versions available are. That could be, for example, unstable, testing, beta, production, and mature.
+This represents the application domain and influences attractiveness for
+marketing reasons normally known as niches.
+%
+Some niches have more volunteer labor (and user base) available than others.
+%
+Moreover, some application domains have more competing (similar) projects than
+others, making it harder for a project to stand out as a viable option for
+use~\cite{johnson2002}.
+%
+\item \emph{Life-cycle stage} (development state) represents the development
+status that the software versions available are. 
+%
+This could be, for example, unstable, testing, beta, production, and mature.
 %
 This status can influence developer's decisions to join and contribute to a
-project, and a user decision to adopt a software~\cite{Santos2010}. It also can affect members' motivations at work to release a
-new version, affecting productivity rates~\cite{raja2006,Stewart2006}. 
+project, and a user decision to adopt a software~\cite{Santos2010}.
+%
+It also can affect members' motivations at work to release a new version,
+affecting productivity rates~\cite{raja2006,Stewart2006}. 
 
 \end{itemize}
 
@@ -351,18 +368,16 @@ attractiveness, showed in Figure~\ref{attractiveness}.
 %
 For this, we defined a simple (intermediary) attractiveness model
 to observe individually the influence of source code attributes on the Free
-Software attractiveness, presented in Figure~\ref{attractiveness2}.
+Software attractiveness -- a subset of variables highlighted in
+Figure~\ref{attractiveness}.
 %
-In summary, a new cause that can partially explain attractiveness is being proposed. We did not
-deal with the consequences of attractiveness when we added source code attributes as
-a cause. But we expect that it would work in the same causal chain manner shown in Figure~\ref{attractiveness}.
-
-\begin{figure}[!t]
-\centering
-\includegraphics[scale=.45]{attractiveness2}
-\caption{Attractiveness model: adapted proposal}
-\label{attractiveness2}
-\end{figure}
+In summary, a new cause that can partially explain attractiveness is being proposed.
+%
+We did not deal with the consequences of attractiveness when we added source
+code attributes as a cause.
+%
+However, we expect that it would work in the same causal chain manner
+shown in Figure~\ref{attractiveness}.
 
 %
 Before a Free Software project can receive failure reports, bug fixes, 
@@ -380,27 +395,40 @@ interested in using the software.
 \end{enumerate}
 
 
-One should note that the numbers of downloads and members
-at SourceForge.net are proxies to the actual numbers of users and developers of the project, respectively.
+One should note that the numbers of downloads and members at SourceForge.net
+are proxies to the actual numbers of users and developers of the project, respectively.
 %
-This study explored a large number of projects and applied 
-the same criteria uniformly to all of them. 
+This study explored a large number of projects and applied the same criteria
+uniformly to all of them. 
 %
-Although that is a limitation, we did not find in previous works other proxies that can represent 
-number of users and number of developers in a large sample of projects.
+Although that is a limitation, we did not find in previous works other proxies
+that can represent number of users and number of developers in a large sample of projects.
 
 The meaning of ``successful'' to Free Software projects were
 observed from different perspectives in previous researches:
 %
-(i) source code modularity (Shaikh and Cornford 2003);
-(ii) number of lines of code generated (Mockus et al. 2000);
-(iii) velocity of closing bugs (Stewart and Gosain 2006);
+(i) source code modularity~\cite{shaikh2003};
+(ii) number of lines of code generated~\cite{mockus2000};
+(iii) velocity of closing bugs~\cite{Stewart2006};
 (iV) ability of a project to advance through development phases
 (e.g., from alpha to beta to stable)~\cite{raja2006,Crowston2002};
-(V) number of downloads (Balijepally et al. 2009);
-(vi) number of members (Crowston and Howison (2006).
+(v) number of downloads~\cite{balijepally2009};
+(vi) number of members~\cite{crowston2006}.
 
-Nos entendemos que essas medidas individualmente nao representem sucesso de forma completa, mas sim uma das formas de ajudar a chegar ao sucesso (ou mante-lo) quando analizadas juntas. Entretanto, no contexto do software livre, com o codigo-fonte sendo considerado o principal artefatos do projeto, levantamos a hipotese de que os atributos do codigo-fonte podem influenciar na atratividade do projeto, pois determinadas caracteristicas do codigo-fonte podem levar a mais contribuicoes ao software, atraindo mais usuarios e membros.
+We understand that these measures, when individually used, do not represent
+fully Free Software successful, but one ways to help to achieve success,
+or keep it, when analyzed together~\cite{Santos2010}.
+%
+Additionally, the vast majority of collaboration for Free Software project
+is in its source code, which is the most important ``artifact'' generated and
+managed for its community.
+%
+Therefore, we proposed to insert in attractiveness model the source code
+attributes -- obtained for source code metrics -- as one of attractiveness causes.
+%
+In summary, same source code characteristics can lead to more contributions for
+project, which may attract more users and developers -- our hypothesis are based
+in this idea.
 
 
 %-------------------------------------------------------------
@@ -482,21 +510,27 @@ and Macxim/Spago4Q\footnote{\url{qualipso.dscpi.uninsubria.it/macxim}}.
 \begin{tabular}{|l|r|r|r|r|r|r|} \hline
   & \multicolumn{4}{|c|}{Raw} & \multicolumn{2}{|c|}{Logarithm}\\ \hline
 
-\textbf{Metric} & Min. & Max. & Mean & Std. Deviation & Mean & Std. Deviation \\ \hline
+\textbf{Metric} 	    & Min. & Max. & Mean & Std. Deviation & Mean & Std. Deviation \\ \hline
 
-CBO & 0 & 7.12 & 2.26 & 9.04 & 0.35 & 0.98 \\ \hline
+Couple Between Objects      & 0 & 7.12 & 2.26 & 9.04 & 0.35 & 0.98 \\ \hline
 
-LCOM4 & 0 & 2.62 & 4.77 & 1.20 & 1.01 & 1.09 \\ \hline
+Lack of Cohesion on Methods & 0 & 2.62 & 4.77 & 1.20 & 1.01 & 1.09 \\ \hline
 
-SC & 0 & 4,940 & 15.79 & 114.69 & 1.37 & 1.57 \\ \hline
+Structural Complexity       & 0 & 4,940 & 15.79 & 114.69 & 1.37 & 1.57 \\ \hline
 
-LOC & 11 & 2,983,103 & 17,700.00 & 91,614.70 & 8.28 & 1.58 \\ \hline
+Number of Modules           & 1 & 7,177 & 74.98 & 276.54 & 3.08 & 1.39 \\ \hline
 
-NM & 1 & 7,177 & 74.98 & 276.54 & 3.08 & 1.39 \\ \hline
+Lines of Code               & 11 & 2,983,103 & 17,700.00 & 91,614.70 & 8.28 & 1.58 \\ \hline
 
-Mbrs & 1 & 288 & 2.90 & 6.19 & 0.59 & 0.79 \\ \hline
+Number of Public Variables  & -- & -- & -- & -- & -- & -- \\ \hline
 
-Dls & 6 & 9,000,000 & 957,000.00 & 17,760,000.00 & 8.20 & 2.66 \\ \hline
+Number of Functions	    & -- & -- & -- & -- & -- & -- \\ \hline
+
+Number of Public Functions  & -- & -- & -- & -- & -- & -- \\ \hline
+
+Number of Members           & 1 & 288 & 2.90 & 6.19 & 0.59 & 0.79 \\ \hline
+
+Number of Downloads         & 6 & 9,000,000 & 957,000.00 & 17,760,000.00 & 8.20 & 2.66 \\ \hline
 
 \end{tabular}
 \label{table:statistics}
@@ -516,14 +550,14 @@ all the projects that matched the following criteria:
 %
 \begin{itemize}
 \item \emph{Source code written in the C language}. 
-While the vast majority of free software applications is written in
+While the vast majority of Free Software applications is written in
 C \cite{robles2006:mining-large}, a large amount of research work
 focuses their analyzes in projects written in Java (e.g. the related
 work reported in section~\ref{related}).
 %
-Given this disparity between the actual free software ecosystem and
+Given this disparity between the actual Free Software ecosystem and
 the research that address it, and our previous experience with
-analysis of free software written in C \cite{terceiro2009}, we
+analysis of Free Software written in C \cite{terceiro2009}, we
 chose to limit the analysis in this work to such projects as well.
 %
 This is our first study relating source code metrics and
@@ -620,31 +654,30 @@ Therefore, in this first study, we disregard some other metrics.
 \centering \caption{Parametric Correlations: Pearson}
 \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|} \hline
 
-\textbf{Variable} & CBO & LCOM4 & SC & NM & LOC & NPA & NOM & NPM & Mbrs & DLs
+\textbf{Variable}           & CBO & LCOM4 & SC & NM & LOC & NPV & NOF & NPF & Mbrs & DLs
 \\ \hline
-CBO & - & 0.141 & 0.723 & 0.380 & 0.608 & 0.423 & 0.434 & 0.492 & 0.113 & 0.129
+Couple Between Objects      & - & 0.141 & 0.723 & 0.380 & 0.608 & 0.423 & 0.434 & 0.492 & 0.113 & 0.129
 \\ \hline
-LCOM4 & 0.141 & - & 0.786 & 0.019 & 0.472 & 0.102 & 0.311 & 0.361 & 0.080 & 0.107
+Lack of Cohesion on Methods & 0.141 & - & 0.786 & 0.019 & 0.472 & 0.102 & 0.311 & 0.361 & 0.080 & 0.107
 \\ \hline
-SC & 0.723 & 0.786 & - & 0.254 & 0.666 & 0.338 & 0.493 & 0.564 & 0.127 & 0.156
+Structural Complexity       & 0.723 & 0.786 & - & 0.254 & 0.666 & 0.338 & 0.493 & 0.564 & 0.127 & 0.156
 \\ \hline
-NM & 0.308 & 0.019 & 0.254 & - & 0.799 & 0.730 & 0.815 & 0.827 & 0.311 & 0.344
+Number of Modules           & 0.308 & 0.019 & 0.254 & - & 0.799 & 0.730 & 0.815 & 0.827 & 0.311 & 0.344
 \\ \hline
-LOC & 0.608 & 0.472 & 0.666 & 0.799 & - & \textbf{0.872} & \textbf{0.923} & \textbf{0.927} & 0.328 & 0.410
+Lines of Code               & 0.608 & 0.472 & 0.666 & 0.799 & - & \textbf{0.872} & \textbf{0.923} & \textbf{0.927} & 0.328 & 0.410
 \\ \hline
-NPA & 0.423 & 0.102 & 0.338 & 0.730 & \textbf{0.872} & - & 0.756 & 0.761 & 0.303 & 0.386
+Number of Public Variables  & 0.423 & 0.102 & 0.338 & 0.730 & \textbf{0.872} & - & 0.756 & 0.761 & 0.303 & 0.386
 \\ \hline
-NOM & 0.434 & 0.311 & 0.493 & 0.815 & \textbf{0.923} & 0.756 & - & 0.886 & 0.320 & 0.380
+Number of Functions         & 0.434 & 0.311 & 0.493 & 0.815 & \textbf{0.923} & 0.756 & - & 0.886 & 0.320 & 0.380
 \\ \hline
-NPM & 0.492 & 0.361 & 0.564 & 0.827 & \textbf{0.927} & 0.761 & 0.886 & - & 0.308 & 0.365
+Number of Public Functions  & 0.492 & 0.361 & 0.564 & 0.827 & \textbf{0.927} & 0.761 & 0.886 & - & 0.308 & 0.365
 \\ \hline
-Mbrs & 0.113 & 0.080 & 0.127 & 0.311 & 0.328 & 0.303 & 0.320 & 0.308 & - & 0.676
+Number of Members           & 0.113 & 0.080 & 0.127 & 0.311 & 0.328 & 0.303 & 0.320 & 0.308 & - & 0.676
 \\ \hline
-DLs & 0.129 & 0.107 & 0.156 & 0.344 & 0.410 & 0.386 & 0.380 & 0.365 & 0.676 & -
+Number of Downloads         & 0.129 & 0.107 & 0.156 & 0.344 & 0.410 & 0.386 & 0.380 & 0.365 & 0.676 & -
 \\ \hline
 \end{tabular}
 \label{pearson}
-\scalefont{1}
 \end{table*}
 \end{center}
 
@@ -654,27 +687,27 @@ DLs & 0.129 & 0.107 & 0.156 & 0.344 & 0.410 & 0.386 & 0.380 & 0.365 & 0.676 & -
 \centering \caption{Non-Parametric Correlations: Spearman}
 \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|} \hline
 
-\textbf{Variable} & CBO & LCOM4 & SC & NM & LOC & NPA & NOM & NPM & Mbrs & DLs
+\textbf{Variable}             & CBO & LCOM4 & SC & NM & LOC & NPV & NOF & NPF & Mbrs & DLs
 \\ \hline
-CBO & - & 0.340 & 0.803 & 0.473 & 0.662 & 0.523 & 0.518 & 0.566 & 0.156 & 0.169
+Couple Between Objects        & - & 0.340 & 0.803 & 0.473 & 0.662 & 0.523 & 0.518 & 0.566 & 0.156 & 0.169
 \\ \hline
-LCOM4 & 0.340 & - & 0.773 & 0.213 & 0.490 & 0.348 & 0.478 & 0.516 & 0.129 & 0.162
+Lack of Cohesion on Methods   & 0.340 & - & 0.773 & 0.213 & 0.490 & 0.348 & 0.478 & 0.516 & 0.129 & 0.162
 \\ \hline
-SC & 0.803 & 0.773 & - & 0.370 & 0.685 & 0.478 & 0.571 & 0.631 & 0.164 & 0.196
+Structural Complexity         & 0.803 & 0.773 & - & 0.370 & 0.685 & 0.478 & 0.571 & 0.631 & 0.164 & 0.196
 \\ \hline
-NM & 0.473 & 0.213 & 0.370 & - & 0.793 & 0.718 & 0.818 & 0.828 & 0.284 & 0.320
+Number of Modules             & 0.473 & 0.213 & 0.370 & - & 0.793 & 0.718 & 0.818 & 0.828 & 0.284 & 0.320
 \\ \hline
-LOC & 0.662 & 0.490 & 0.685 & 0.793 & - & \textbf{0.863} & \textbf{0.918} & \textbf{0.922} & 0.307 & 0.392
+Lines of Code                 & 0.662 & 0.490 & 0.685 & 0.793 & - & \textbf{0.863} & \textbf{0.918} & \textbf{0.922} & 0.307 & 0.392
 \\ \hline
-NPA & 0.523 & 0.348 & 0.478 & 0.718 & \textbf{0.863} & - & 0.758 & 0.765 & 0.280 & 0.363
+Number of Public Variables    & 0.523 & 0.348 & 0.478 & 0.718 & \textbf{0.863} & - & 0.758 & 0.765 & 0.280 & 0.363
 \\ \hline
-NOM & 0.518 & 0.478 & 0.571 & 0.818 & \textbf{0.918} & 0.758 & - & 0.895 & 0.300 & 0.362
+Number of Functions           & 0.518 & 0.478 & 0.571 & 0.818 & \textbf{0.918} & 0.758 & - & 0.895 & 0.300 & 0.362
 \\ \hline
-NPM & 0.566 & 0.516 & 0.631 & 0.828 & \textbf{0.922} & 0.765 & 0.895 & - & 0.288 & 0.347
+Number of Public Functions    & 0.566 & 0.516 & 0.631 & 0.828 & \textbf{0.922} & 0.765 & 0.895 & - & 0.288 & 0.347
 \\ \hline
-Mbrs & 0.156 & 0.129 & 0.164 & 0.284 & 0.307 & 0.280 & 0.300 & 0.288 & - & 0.598
+Number of Members             & 0.156 & 0.129 & 0.164 & 0.284 & 0.307 & 0.280 & 0.300 & 0.288 & - & 0.598
 \\ \hline
-DLs & 0.169 & 0.162 & 0.196 & 0.320 & 0.392 & 0.363 & 0.362 & 0.347 & 0.598 & -
+Number of Downloads           & 0.169 & 0.162 & 0.196 & 0.320 & 0.392 & 0.363 & 0.362 & 0.347 & 0.598 & -
 \\ \hline
 \end{tabular}
 \label{spearman}
@@ -687,27 +720,27 @@ DLs & 0.169 & 0.162 & 0.196 & 0.320 & 0.392 & 0.363 & 0.362 & 0.347 & 0.598 & -
 \centering \caption{Non-Parametric Correlations: Kendall}
 \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|} \hline
 
-\textbf{Variable} & CBO & LCOM4 & SC & NM & LOC & NPA & NOM & NPM & Mbrs & DLs
+\textbf{Variable} 	    & CBO & LCOM4 & SC & NM & LOC & NPV & NOF & NPF & Mbrs & DLs
 \\ \hline
-CBO & - & 0.244 & 0.650 & 0.341 & 0.483 & 0.377 & 0.373 & 0.410 & 0.118 & 0.114
+Couple Between Objects      & - & 0.244 & 0.650 & 0.341 & 0.483 & 0.377 & 0.373 & 0.410 & 0.118 & 0.114
 \\ \hline
-LCOM4 & 0.244 & - & 0.597 & 0.148 & 0.341 & 0.240 & 0.333 & 0.362 & 0.097 & 0.109
+Lack of Cohesion on Methods & 0.244 & - & 0.597 & 0.148 & 0.341 & 0.240 & 0.333 & 0.362 & 0.097 & 0.109
 \\ \hline
-SC & 0.650 & 0.597 & - & 0.262 & 0.497 & 0.345 & 0.413 & 0.460 & 0.124 & 0.132
+Structural Complexity       & 0.650 & 0.597 & - & 0.262 & 0.497 & 0.345 & 0.413 & 0.460 & 0.124 & 0.132
 \\ \hline
-NM & 0.341 & 0.148 & 0.262 & - & 0.605 & 0.546 & 0.641 & 0.648 & 0.217 & 0.219
+Number of Modules           & 0.341 & 0.148 & 0.262 & - & 0.605 & 0.546 & 0.641 & 0.648 & 0.217 & 0.219
 \\ \hline
-LOC & 0.483 & 0.341 & 0.497 & 0.605 & - & \textbf{0.660} & \textbf{0.763} & \textbf{0.771} & 0.233 & 0.270
+Lines of Code               & 0.483 & 0.341 & 0.497 & 0.605 & - & \textbf{0.660} & \textbf{0.763} & \textbf{0.771} & 0.233 & 0.270
 \\ \hline
-NPM & 0.377 & 0.240 & 0.345 & 0.546 & \textbf{0.660} & - & 0.588 & 0.596 & 0.213 & 0.249
+Number of Public Variables  & 0.377 & 0.240 & 0.345 & 0.546 & \textbf{0.660} & - & 0.588 & 0.596 & 0.213 & 0.249
 \\ \hline
-NOM & 0.373 & 0.333 & 0.413 & 0.641 & \textbf{0.763} & 0.588 & - & 0.864 & 0.228 & 0.248
+Number of Functions         & 0.373 & 0.333 & 0.413 & 0.641 & \textbf{0.763} & 0.588 & - & 0.864 & 0.228 & 0.248
 \\ \hline
-NPM & 0.410 & 0.362 & 0.460 & 0.648 & \textbf{0.771} & 0.596 & 0.864 & - & 0.219 & 0.237
+Number of Public Functions  & 0.410 & 0.362 & 0.460 & 0.648 & \textbf{0.771} & 0.596 & 0.864 & - & 0.219 & 0.237
 \\ \hline
-Mbrs & 0.118 & 0.097 & 0.124 & 0.217 & 0.233 & 0.213 & 0.228 & 0.219 & - & 0.471
+Number of Members           & 0.118 & 0.097 & 0.124 & 0.217 & 0.233 & 0.213 & 0.228 & 0.219 & - & 0.471
 \\ \hline
-DLs & 0.114 & 0.109 & 0.132 & 0.219 & 0.270 & 0.249 & 0.248 & 0.237 & 0.471 & -
+Number of Downloads         & 0.114 & 0.109 & 0.132 & 0.219 & 0.270 & 0.249 & 0.248 & 0.237 & 0.471 & -
 \\ \hline
 \end{tabular}
 \label{kendall}
@@ -715,7 +748,7 @@ DLs & 0.114 & 0.109 & 0.132 & 0.219 & 0.270 & 0.249 & 0.248 & 0.237 & 0.471 & -
 \end{center}
 %\vspace{-4em}
 
-Nevertheless, in the first stage of our statistical analysis, LOC, NOM, NPA and NPM metrics 
+Nevertheless, in the first stage of our statistical analysis, LOC, NOF, NPV and NPF metrics 
 showed high correlation between each other, according to Pearson's
 parametric correlations shown in the Table~\ref{pearson}.
 %
@@ -875,11 +908,11 @@ which would then attract more users.
 \\ \hline
 (Constant) & 1.551 & - & 6.12 & \textless 0.001 & -0.668 & - & -8.47 & \textless 0.001
 \\ \hline
-SC (log) & -0.286 & -0,150 & -8.616 & \textless 0.001 & -0.033 & -0.058 & -3.238 & 0.001
+Structural Complexity (log) & -0.286 & -0,150 & -8.616 & \textless 0.001 & -0.033 & -0.058 & -3.238 & 0.001
 \\ \hline
-LOC (log) & 0.856 & 0.506 & 18.624 & \textless 0.001 & 0.126 & 0.249 & 8.846 & \textless 0.001
+Lines of Code (log) & 0.856 & 0.506 & 18.624 & \textless 0.001 & 0.126 & 0.249 & 8.846 & \textless 0.001
 \\ \hline
-NM (log) & 0.008 & 0.004 & 0.186 & 0.852 & 0.087 & 0.148 & 6.625 & \textless 0.001
+Number of Modules (log) & 0.008 & 0.004 & 0.186 & 0.852 & 0.087 & 0.148 & 6.625 & \textless 0.001
 \\ \hline
    \hline
 $R$ & \multicolumn{4}{|c|}{0.425} & \multicolumn{4}{|c|}{0.348}\\ \hline
@@ -968,7 +1001,7 @@ In our analysis, the $R$-value indicated that source code metrics explain 18\%
 number of members. 
 %
 In conclusion, these are significant values for the social context that an
-adoption or volunteering of a free software projects are involved.
+adoption or volunteering of a Free Software projects are involved.
 
 \subsection{Hypothesis 1}
 
