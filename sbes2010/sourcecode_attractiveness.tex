@@ -164,88 +164,85 @@ Section~\ref{related} reviews related work.
 Conclusions and future research directions are discussed in Section~\ref{conclusion}.
 
 %-------------------------------------------------------------
-
-\section{Theoretical Background}  %% Chris : present or past tense?
+\section{Theoretical Background}
 \label{background}
-%% Chris : Achei esta secao meio confusa -- por que nao criar 2 sub-secoes
-%Tambem achei que misturou apresentacao de conceitos com algumas decisoes do estudo
-%talvez algum texto possa ser movido %para o final ou retirado.
 
-In this section we show the definitions of selected source code metrics (Section~\ref{scm}) and the concept of attractiveness and its proxies (Section~\ref{attract})
-to build a statistical model that represents the relationships proposed.
+In this section we present the definitions of the selected source code metrics
+(Section~\ref{scm}) and the attractiveness concept, including its proxies (Section~\ref{attract}).
+These were chosen to build a statistical model that represents the relationships proposed.
 
 \subsection{Source code metrics}
 \label{scm}
 
-For our subset of source code metrics, we used the concept of ``module''
-as a general term for the different types of building blocks used in software
-development, standing for classes, abstract data types, source files, etc. 
+For our subset of source code metrics, we used the ``module'' concept
+as a general term for the different types of structures used in software
+development. Therefore, it stands for classes, abstract data types and source files. 
 %
-Specifically in this study, we used the concept of ``module'' for C source files.
+Specifically in this study, we consider a C source file as a ``module''.
+
 %
 Similarly, we generalized the concept of ``method''
 to ``function'', denoting a portion of source code that performs a specific task.
 
-The most commonly used metric to measure software size is \emph{Lines of Code} (LOC).
+The most commonly used metric to measure software size is \emph{Lines of Code} (LOC), 
+which indicates the number of non-blank and non-comment source code lines.
 %
 Using the LOC metric as a basis for comparison between projects requires
 the projects to be written in the same programming language~\cite{Jones91}.
-LOC indicates the number of non-blank, non-comment source code lines in
-the project.
 
-Another useful metric for software size is the \emph{Number of Modules},
+
+On the other hand, \emph{Number of Modules} is another useful size indicator,
 which is somewhat less influenced by programming languages and line-level
-coding styles. Therefore, it can be used to compare projects written in
+coding styles. With that being said, it can be used to compare projects written in
 different languages~\cite{Tempero}.
 
 When considering characteristics such as maintainability, flexibility,
 comprehension effort, and source code quality in general, one has to take into
 account not only the size metrics described above but also structural metrics,
-such as the ones described below.
+such as the ones that follow.
 
 \emph{Number of Functions} (NOF) is used to measure module size in terms of
-the operations it supports. A module should not have an excessive number 
-of operations~\cite{beck97}.
+the operations it implements. 
 %
 This metric is used to help identify the reuse potential of a module.
-In general, modules with a large number of operations are more difficult
-to reuse because they tend to be less cohesive~\cite{Lorenz94}.
+In general, modules with a large number of functions are more difficult
+to reuse because they tend to be less cohesive~\cite{Lorenz94}. 
+%
+Hence, a module should not have an excessive number of functions~\cite{beck97}.
 
 \emph{Number of Public Variables} (NPV) and \emph{Number of Public Functions} (NPF)
 are metrics related to module encapsulation. They measure the potential
 communication among modules~\cite{Bansiya97}.
 %
-Programming best practices recommend that module variables be only
-manipulated via accessor functions~\cite{beck97}. Thus, module variables 
+Once good programming practices recommend that module variables should be only
+manipulated via accessor functions~\cite{beck97}, module variables 
 should be private, indicating that the optimal number for this metric is zero.
 %
-The number of public functions in a module represents the size of ``module interface''.
-Functions are directly related to the functionality provided by the module.
-High values for this metric indicate that a module has a lot of functions,
-which also contradicts the recommended best practices of programming~\cite{beck97}.
+The number of public functions in a module represents the size of the ``module interface''.
+Functions are directly related to the operations provided by their module.
+High values for this metric indicate that a module has a lot of functions and, probably,
+many responsabilities, conflicting with good programming practices~\cite{beck97}.
 
 \emph{Cohesion} is a measure of the diversity of ``topics'' that a
-module implements. High cohesion values indicate modules that focus on a
-single aspect of the system, while low cohesion indicates modules that
-deal with several different aspects. Highly cohesive modules are easier to
-understand, maintain, and modify.
+module implements. High cohesion values indicate whether a module focus on a
+single aspect of the system, while low indicates it deals with several 
+different aspects. In terms of undestanding, modification and maintainability,
+highly cohesive modules should be seeked.
+
 %
-A metric commonly used for cohesion is \emph{Lack of Cohesion on
+A metric commonly used for cohesion is \emph{Lack of Cohesion of
 Methods} (LCOM), originally proposed by Chidamber and Kemerer~\cite{Chidamber94}.
 High LCOM values indicate low cohesion, while low LCOM values indicate high cohesion.
 
-The first LCOM definition, called LCOM1, has
-received a lot of criticism and revision proposals. LCOM1 corresponds to
-the number of pairs of functions of a module using the same module variables.
+The first LCOM definition, called LCOM1, corresponds to
+the number of function pairs of a module which manipulate the same module variables.
+Once it has received several criticism and revision proposals, through this study we used 
+the revised definition by Hitz and Montazeri, known as LCOM4~\cite{LCOM4}.
 %
-In this study, we used the revised definition by Hitz and Montazeri,
-known as LCOM4~\cite{LCOM4}.
-%
-LCOM4 indicates the number of connected components of an undirected graph, where the
-nodes are the functions. When two functions use at least a module variable in
-common, there is an edge between the corresponding nodes. Additionally, the graph
-has an edge between these functions, if one invokes the other.
-%% Chris inserted : pessoal, rever essa definicao de LCOM4
+In order to calculate LCOM4 of a module, it is necessary to build a undirect graph in
+which the nodes are its functions and variables. For every function, there should be
+an edge between it and another function or variable it uses. The LCOM4 value is the number
+of weakly connected components of this graph.
 
 \emph{Coupling} is a measure of how one module is connected to other modules
 in the project.
@@ -255,30 +252,29 @@ modules of the system, since a change in one module may have an impact in
 all other modules that are coupled to it.
 %
 In other words, if coupling is high, the software tends to be less flexible,
-more difficult to adapt and to understand.
+more difficult to adapt, and more difficult to understand.
 %
-An objective metric for measuring coupling is \emph{Coupling Between Objects} (CBO),
-also proposed by Chidamber and Kemerer. CBO measures how many modules are
-used by the module being analyzed~\cite{Chidamber94}.
+A straightforward method to measure coupling is \emph{Coupling Between Objects} (CBO),
+once again proposed by Chidamber and Kemerer. CBO measures how many modules are
+used by the one being analyzed~\cite{Chidamber94}.
 
 The more complex a piece of software, the more challenging it is to change and
 evolve it. Coupling and cohesion have been described and discussed in
 many works as essential indicators of structural complexity~\cite{darcy2005}.
-%
-It is widely known that to build high-quality and flexible software, 
+Moreover, it is widely known that to build high-quality and flexible software, 
 it is advisable to seek low coupling and high cohesion~\cite{richter99}.
 
 In fact, Darcy \emph{et al.}~\cite{darcy2005} showed that, individually, neither
-coupling nor cohesion are related to software maintenance effort,
-they are metrics that must be considered together. When combined, the
-product of coupling and cohesion as a metric is positively correlated to
+coupling nor cohesion are related to a software maintenance effort. Both must be considered together.
+When combined, the product of coupling and cohesion as a metric is positively correlated to
 the maintenance effort.
 
-In conclusion, seven metrics were used in our study, selected according to 
-criteria shown in Section~\ref{researchDesign}, to build an statistical model.
+In conclusion, seven source code metrics, selected according to criteria shown 
+in Section~\ref{researchDesign}, were used on the statistical model for our study.
 %
-Specifically, we use the product of coupling (CBO) and cohesion (LCOM4) as
+In particular, we use the product of coupling (CBO) and cohesion (LCOM4) as
 our metric of structural complexity (SC)~\cite{darcy2005}.
+
 
 \subsection{Attractiveness} 
 \label{attract}
@@ -509,7 +505,7 @@ and Macxim/Spago4Q\footnote{\url{qualipso.dscpi.uninsubria.it/macxim}}.
 \begin{tabular}{|l|r|r|r|r|r|r|} \hline
   & \multicolumn{4}{|c|}{Raw} & \multicolumn{2}{|c|}{Logarithm}\\ \hline
 
-\textbf{Metric} 	    & Min. & Max.        & Mean      & Std. Deviation & Mean & Std. Deviation \\ \hline
+\textbf{Metric} 	    & Minimum & Maximum        & Mean      & Std. Deviation & Mean & Std. Deviation \\ \hline
 
 (Average) Couple Between Objects      & 0    & 7.12        & 2.26      & 9.04           & 0.35 & 0.98 \\ \hline
 
