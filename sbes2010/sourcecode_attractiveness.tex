@@ -66,7 +66,7 @@ contributors and users around their software, enabling further enhancement in qu
 
 The adoption of Free and Open Source Software\footnote{In this study,
 we consider the terms Free Software and Open Source Software (OSS) equivalent.}
-has significantly increased in the last decades, to the point of becoming
+has significantly increased in the last decades to the point of becoming
 influential to the global economy~\cite{Benkler06}.
 %
 Although Free Software has emerged as a movement supported by volunteer developers,
@@ -83,7 +83,7 @@ their quality expectations.
 
 This satisfaction and quality is usually achieved thanks to the collaboration
 of a large user and developer community who reports failures,
-fixes bugs, and adds features.
+fixes bugs and adds features.
 %
 In fact, the Free Software development model is said to offer two main advantages:
 the potential for peer-review and the possibility of attracting developers
@@ -281,7 +281,7 @@ our metric of structural complexity (SC)~\cite{darcy2005}.
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[scale=.45]{figure/attractiveness3}
+\includegraphics[scale=.35]{figure/attractiveness3}
 \caption{Attractiveness research and measurement model
 -- adapted from Santos Jr.~\cite{Santos2010}}
 \label{attractiveness}
@@ -445,8 +445,8 @@ to test our hypothesis, which are discussed in Section~\ref{hypotheses}.
 \texttt{Analizo}\footnote{\url{softwarelivre.org/mezuro/analizo}} is a 
 multi-language source code analysis tool.
 %
-Its architecture was designed to support source code parsing, for different
-languages, and to report useful information about it.
+Its architecture was designed to support source code parsing in different
+languages and to report useful information about it.
 
 A basic requirement of our source code analysis tool was the ability to analyze
 source code written in multiple languages.
@@ -459,15 +459,17 @@ In addition, tools based on object code are not
 capable of analyzing features present only in the source, such as comments.
 %
 To avoid these problems, \texttt{Analizo} is designed to extract the information
-directly from source code parsers.
+directly from source code files.
 
 \texttt{Analizo} uses \texttt{Doxyparse}\footnote{\url{softwarelivre.org/mezuro/doxyparse}},
 a multi-language source code parser based on Doxygen's internals, to parse the source code.
 %
 This feature provides \texttt{Analizo} with the potential ability to parse all 
-the languages supported by Doxygen\footnote{\url{doxygen.org}}, but, 
+the languages supported by \texttt{Doxygen}\footnote{\url{doxygen.org}}, but, 
 up to the moment, it has been tested only with C, C++, and Java source code.
 
+% João: não se concordo em colocar todas as métricas que a Analizo calcula se não faz sentido para C
+% Ou mudamos a frase para não falar de C ou tiramos métricas como DIT, NOC,...
 \texttt{Analizo} has been fully tested with C source code downloaded from 
 Sourceforge.net projects, supporting the computation of  fourteen metrics:
 \begin{itemize}
@@ -573,7 +575,7 @@ to perform data collection:
 
 \begin{enumerate}
 \item Download the code of all the projects. This resulted in the source code 
-for 10,128 projects since some of them had no available files (empty``files''
+for 10,128 projects since some of them had no available files (empty ``files''
 section in the SourceForge.net project pages);
 
 \item Run \texttt{Analizo} sequentially for all projects and store the computed metrics in a single database.
@@ -584,7 +586,7 @@ The metrics were successfully computed for 6,773 projects only, because
 %
 (ii) the source code was not written in C, (the project was incorrectly 
 classified as being written in C), or
-%
+% João: infinite loops? A gente não roda o programa para dar loop infinito. Eu colocaria syntax errors ou algo do tipo.
 (iii) some files could not be processed by \texttt{Analizo} due to severe
 errors in the source code (e.g., infinite loops);
 
@@ -630,18 +632,18 @@ and average CBO.
 %
 Since it is possible to generalize the concepts of ``class'' and ``method''
 to ``module'' and ``function'', respectively, NOF, NPV, NPF, LCOM4 and CBO 
-were applied to the procedural paradigm of the C language. 
+were applied to the C language procedural paradigm. 
 %%\TODO Chris pediu referencia AQUI, mas nao vou ter tempo. 
 %%Talvez o Terceiro tenha. Antes a ideia disso estava numa nota de rodape
 
-In cases of ACC, AMZ\_Size, COF, DIT, NOC, NOV, and RFC metrics are not used 
-because the source code attributes that they measure are not in the scope of this study.
+ACC, AMZ\_Size, COF, DIT, NOC, NOV, and RFC metrics were not used 
+because the source code attributes that they measure are intrinsically related to the 
+object oriented paradigm.
 %
-We needed to limit the scope to accomplish the study. Thereby, we selected an initial 
-subset of source code metrics based in the criteria that we wanted a simple
-statistical model with size and complexity structural metrics. 
+In order to accomplish this study, we needed to limit its scope. Thereby, we selected an initial 
+subset of source code metrics looking forward to assemble a simple
+statistical model with size and structural complexity metrics, disregarding some other measures.
 %
-Therefore, in this first study, we disregard some other metrics.
 
 %\vspace{-3em}
 \begin{center}
@@ -657,7 +659,7 @@ Lack of Cohesion on Methods & 0.141 & - & 0.786 & 0.019 & 0.472 & 0.102 & 0.311 
 \\ \hline
 Structural Complexity       & 0.723 & 0.786 & - & 0.254 & 0.666 & 0.338 & 0.493 & 0.564 & 0.127 & 0.156
 \\ \hline
-Number of Modules           & 0.308 & 0.019 & 0.254 & - & 0.799 & 0.730 & 0.815 & 0.827 & 0.311 & 0.344
+    Number of Modules           & 0.308 & 0.019 & 0.254 & - & 0.799 & 0.730 & 0.815 & 0.827 & 0.311 & 0.344
 \\ \hline
 Lines of Code               & 0.608 & 0.472 & 0.666 & 0.799 & - & \textbf{0.872} & \textbf{0.923} & \textbf{0.927} & 0.328 & 0.410
 \\ \hline
@@ -748,7 +750,7 @@ showed high correlation between each other, according to Pearson's
 parametric correlations shown in the Table~\ref{pearson}.
 %
 Highly correlated variables indicate that they are representations of
-a same attribute, thereby making it unnecessary to use more than one.
+a same attribute, making it unnecessary to use more than one.
 %
 Since all these metrics represent a similar concept, we selected one of them -- LOC -- 
 for our statistical analysis to reduce multicollinearity.
@@ -763,7 +765,7 @@ Pearson correlations performed just as well as the non-parametric indices.
 Thus, we chose the Pearson parametric correlation because it represents the most 
 commonly used form of correlation index, and it also provides the basis for the 
 regression analysis we performed later. That way, we could maintain
-consistency because multiple regression techniques are based on
+consistency once multiple regression techniques are based on
 parametric indices~\cite{hair2006}.
 
 According to analysis described above, we ended up considering LOC and NM 
@@ -779,13 +781,12 @@ Pearson's correlations values were approximately 0.9 or higher as our criteria,
 emphasized in Table~\ref{pearson}.
 
 %
-In conclusion, LOC and NM measure different kinds of size metrics, more or less
+In conclusion, LOC and NM were collected since they measure different kinds of size metrics, more or less
 influenced by programming languages and coding styles, respectively.
 %
-Thereby, we collected both the LOC and NM metrics.
-
-Finally, CBO and LCOM4 were multiplied to obtain the value of our structural
-complexity metric (SC), explained in Section~\ref{background}.
+% João: fiz essa mudança para quebrar a mesma estrutura de frase
+Finally, to obtain the value of our structural
+complexity metric (SC), explained in Section~\ref{background}, CBO and LCOM4 were multiplied.
 %
 These three metrics did not show high correlations with other metrics.
 %
@@ -829,7 +830,7 @@ Thus, we have two different regressions, one for each attractiveness indicator.
 %
 They are the variables explained by the source code attributes proposed in our hypotheses.
 %
-Consequently, SC, LOC and MN metrics, which represent the source code attributes,
+Consequently, SC, LOC and NM metrics, which represent the source code attributes,
 are the independent variables -- the influencers of attractiveness.
 
 %----------------------------------------------------------------------
@@ -845,7 +846,7 @@ of Free Software projects.
 Thereby, we can later observe whether these attributes influence people's 
 perception of quality as consequence of attractiveness.
 %
-Therefore, according to the metrics chosen to represent structural
+According to the metrics chosen to represent structural
 complexity and size, we formulated three hypotheses:
 
 \begin{enumerate}
@@ -878,7 +879,7 @@ higher attractiveness.}
 The number of modules may indicate the project size and the possibility
 of working in parallel in independent modules.
 %
-More modules may indicate a concern with good design, with better modularization,
+More modules may indicate a concern with good design and better modularization,
 which facilitates contributions.
 %
 This attracts more members, who can write more features and fix more bugs,
@@ -926,13 +927,13 @@ Before running this model, we analyzed and applied statistical techniques
 on the descriptive statistical values of our dataset presented in
 Table~\ref{table:statistics}, discussed in Section~\ref{sdcollection}.
 %
-We selected the variable of our regression model according to our criteria for
-definition of scope this study and analysis of the Pearson parametric
-correlations, and Spearman and Kendal non-parametric correlations,
-Table~\ref{pearson}, Table~\ref{spearman}, and Table~\ref{kendall} respectively,
-presented in detail in Section~\ref{variables}.
+With the results in hand, we selected the variables of our regression model according to our scope
+definition, the analysis of the Pearson parametric
+correlations and Spearman and Kendal non-parametric correlations,
+shown in Table~\ref{pearson}, Table~\ref{spearman}, and Table~\ref{kendall} respectively,
+and presented in detail in Section~\ref{variables}.
 %%TODO: new
-Finally, with the linearized values of SC, NN, and LOC (independent variables) 
+Finally, with the linearized values of SC, NM, and LOC (independent variables) 
 and number of downloads and number of members (dependent variables), we tested 
 our hypotheses according to our statistical multiple regression model compound
 for this variables.
@@ -1087,9 +1088,9 @@ Additionally, when lines of code is kept constant, different values in
 number of modules represent different ways of organizing these features over
 different modules.
 %
-A higher number of modules thus indicates a higher modularity, which in turn makes
-it easier for developers to work on the project, requiring less
-coordination effort. This because is easier to work on modular software.
+A higher number of modules thus indicates a higher modularity, which makes
+it easier for developers to work on the project and requires less
+coordination effort.
 %
 For users, on the other hand, it is probably the case that it does not matter
 whether the software is modular or not; they are only interested in the provided features.
@@ -1099,7 +1100,7 @@ Finally, collaborators in Free Software projects often start participating in
 the project as users, attracted by the software features.
 %
 After that, those users who have the potential to become developers may begin
-to contribute code.
+to contribute with the code.
 %
 While a high number of lines of code (and thus of features) is enough to attract
 users, project leaders should pay attention to source code quality.
