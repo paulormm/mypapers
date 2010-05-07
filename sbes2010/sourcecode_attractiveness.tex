@@ -16,17 +16,17 @@
 \title{A Study of the Relationships between Source Code Metrics and Attractiveness in Free Software Projects}
 
 \author{\IEEEauthorblockN{Paulo Meirelles, Carlos Santos Jr., Jo\~ao Miranda, Fabio Kon}
-	\IEEEauthorblockA{Free Software Competence Center\\
+	\IEEEauthorblockA{FLOSS Competence Center\\
 			Institute of Mathematics and Statistics\\
 			University of S\~ao Paulo, Brazil\\
 			(CCSL-IME/USP)\\
-			Email: \{paulormm,denner,joaomm,kon\}@ime.usp.br}
+			\{paulormm,denner,joaomm,fabio.kon\}@ime.usp.br}
 \and
 	\IEEEauthorblockN{Antonio Terceiro, Christina Chavez}
 	\IEEEauthorblockA{Department of Computer Science\\
 			Federal University of Bahia, Brazil\\
 			(DCC-UFBA)\\
-			Email: \{terceiro,flach\}@dcc.ufba.br}}
+			\{terceiro,flach\}@dcc.ufba.br}}
 
 \begin{document}
 \normalem
@@ -366,7 +366,7 @@ to observe the individual influence of source code attributes on Free
 Software attractiveness -- a subset of variables highlighted in
 Figure~\ref{attractiveness}.
 %
-In short, a new element that can partially explain attractiveness is being proposed.
+In short, we propose a new element that can explain attractiveness partially.
 %
 We did not deal with the consequences to attractiveness when we added source
 code attributes as an influence.
@@ -397,8 +397,8 @@ are proxies to the actual numbers of users and developers of the project, respec
 This study explored a large number of projects and applied the same criteria
 uniformly to all of them. 
 %
-Although that is a limitation, we did not find in previous works other proxies
-that can represent number of users and number of developers in a large sample of projects.
+Although we recognize that using these proxies is a limitation, we did not find in previous works better proxies that could represent more faithfully the number of users and number of developers in a large sample of projects.
+
 
 The meaning of ``success'' to Free Software projects was discussed from
 different perspectives in previous research:
@@ -465,13 +465,10 @@ directly from source code files.
 a multi-language source code parser based on Doxygen's internals, to parse the source code.
 %
 This feature provides \texttt{Analizo} with the potential ability to parse all 
-the languages supported by \texttt{Doxygen}\footnote{\url{doxygen.org}}, but, 
-up to the moment, it has been tested only with C, C++, and Java source code.
-
-% João: não se concordo em colocar todas as métricas que a Analizo calcula se não faz sentido para C
-% Ou mudamos a frase para não falar de C ou tiramos métricas como DIT, NOC,...
-\texttt{Analizo} has been fully tested with C source code downloaded from 
-Sourceforge.net projects, supporting the computation of  fourteen metrics:
+the languages supported by \texttt{Doxygen}\footnote{\url{doxygen.org}}.
+% 
+So, up to the moment, it has been tested only with C, C++, and Java source code, 
+supporting the computation of  fourteen metrics:
 \begin{itemize}
 \item \emph{Afferent Connections per Class} (ACC),
 \item \emph{Coupling between Objects} (CBO),
@@ -527,7 +524,7 @@ and Macxim/Spago4Q\footnote{\url{qualipso.dscpi.uninsubria.it/macxim}}.
 
 (Total) Number of Members               & 1    & 288.00         & 2.90       & 6.19          & 0.59 & 0.79 \\ \hline
 
-(Total) Number of Downloads             & 6    & 900,000,000.00   & 957,000.00 & 17,760,000.00 & 8.20 & 2.66 \\ \hline
+(Total) Number of Downloads             & 6    & 941,498,760.00   & 957,000.00 & 17,760,000.00 & 8.20 & 2.66 \\ \hline
 
 \end{tabular}
 \label{table:statistics}
@@ -549,17 +546,17 @@ all the projects that matched the following criteria:
 \item \emph{Source code written in the C language}. 
 While the vast majority of Free Software applications is written in
 C \cite{robles2006:mining-large}, a large amount of research work
-focuses their analyzes in projects written in Java (e.g. the related
+focuses their analyzes in projects written in Java (e.g., the related
 work reported in section~\ref{related}).
 %
 Given this disparity between the actual Free Software ecosystem and
-the research that address it, and our previous experience with
+the research that addresses it, and our previous experience with
 analysis of Free Software written in C \cite{terceiro2009}, we
-chose to limit the analysis in this work to such projects as well.
+chose to focus the analysis in this work to such projects as well.
 %
 This is our first study relating source code metrics and
 attractiveness, and in the future we plan to include other
-programming languages (e.g. C++, Java), as well as trying to
+programming languages (e.g., C++, Java), as well as trying to
 identify similarities and discrepancies among projects written in
 different languages.
 %%Chris: Daqueles 6% mencionados na secao 1, quantos projetos sao escritos em C?
@@ -586,11 +583,10 @@ The metrics were successfully computed for 6,773 projects only, because
 %
 (ii) the source code was not written in C, (the project was incorrectly 
 classified as being written in C), or
-% João: infinite loops? A gente não roda o programa para dar loop infinito. Eu colocaria syntax errors ou algo do tipo.
 (iii) some files could not be processed by \texttt{Analizo} due to severe
-errors in the source code (e.g., infinite loops);
+errors in the source code (e.g., syntax errors);
 
-\item Cross-joined the two datasets. Finally the two datasets --
+\item Cross-join the two datasets. Finally the two datasets --
 the SourceForge.net data available from the University of Notre Dame and 
 FLOSSMole on the one side and the source code metrics calculated 
 by \texttt{Analizo} on the other side --  were cross-joined so that
@@ -600,7 +596,7 @@ we could perform the needed statistical analysis.
 Table \ref{table:statistics} summarizes our sample, but the complete data set
 used for this study is available on the Web~\footnote{\url{ccsl.ime.usp.br/mangue/data}}.
 %
-Section~\ref{variables} discusses in details how we selected the variables
+Section~\ref{variables} discusses in detail how we selected the variables
 presented in Table~\ref{table:statistics}.
 %
 This table shows natural values of minimum, maximum, arithmetic mean, and 
@@ -609,7 +605,7 @@ standard deviation for each variable, indicating the characteristics of our samp
 We analyzed our selected variables in their natural form (Raw) to verify their
 distribution, which is presented in the first part of Table~\ref{table:statistics}.
 %
-Thereby, we observe that the Skewness and Kurtosis probability distribution
+Thereby, we observed that the Skewness and Kurtosis probability distribution
 showed high values, indicating non-normality~\cite{hair2006}.
 %
 Because of this non-normality, we transformed the variables to a logarithm 
@@ -630,20 +626,18 @@ we selected seven for our initial analysis:
 total LOC, total NM, total NOF, total NPV, total NPF, average LCOM4,
 and average CBO.
 %
-Since it is possible to generalize the concepts of ``class'' and ``method''
-to ``module'' and ``function'', respectively, NOF, NPV, NPF, LCOM4 and CBO 
-were applied to the C language procedural paradigm. 
-%%\TODO Chris pediu referencia AQUI, mas nao vou ter tempo. 
-%%Talvez o Terceiro tenha. Antes a ideia disso estava numa nota de rodape
+To be able to apply to the procedural paradigm of the C language some metrics
+that area widely-used in the literature such as NOF, NPV, NPF, LCOM4, and CBO,
+we assumed a mapping of the object concepts of ``class'' and ``method'' to the
+C concepts of ``source file'' and ``function''.
+%% by fabio kon
 
-ACC, AMZ\_Size, COF, DIT, NOC, NOV, and RFC metrics were not used 
-because the source code attributes that they measure are intrinsically related to the 
-object oriented paradigm.
 %
-In order to accomplish this study, we needed to limit its scope. Thereby, we selected an initial 
-subset of source code metrics looking forward to assemble a simple
-statistical model with size and structural complexity metrics, disregarding some other measures.
+In this first study, we limited the scope of metrics used to be able to reach
+a simple yet comprehensive model to relate source code and attractiveness.
 %
+Thus, the ACC, AMZ\_Size, COF, DIT, NOC, NOV, and RFC metrics were left out of
+the scope of this study.
 
 %\vspace{-3em}
 \begin{center}
@@ -745,9 +739,10 @@ Number of Downloads         & 0.114 & 0.109 & 0.132 & 0.219 & 0.270 & 0.249 & 0.
 \end{center}
 %\vspace{-4em}
 
-Nevertheless, in the first stage of our statistical analysis, LOC, NOF, NPV and NPF metrics 
-showed high correlation between each other, according to Pearson's
-parametric correlations shown in the Table~\ref{pearson}.
+Nevertheless, in the first stage of our statistical analysis,
+the LOC, NOF, NPV and NPF metrics showed a high correlation between each other,
+according to Pearson's parametric correlations as shown by the bold numbers
+in Table~\ref{pearson}.
 %
 Highly correlated variables indicate that they are representations of
 a same attribute, making it unnecessary to use more than one.
@@ -755,9 +750,9 @@ a same attribute, making it unnecessary to use more than one.
 Since all these metrics represent a similar concept, we selected one of them -- LOC -- 
 for our statistical analysis to reduce multicollinearity.
 
-We have also analyzed the Spearman and Kendal non-parametric correlations,
-Table~\ref{spearman} and Table~\ref{kendall} respectively, given that some of
-our variables are not normally distributed. 
+We have also analyzed the Spearman and Kendal non-parametric correlations
+(see Table~\ref{spearman} and Table~\ref{kendall}, respectively)
+given that some of our variables are not normally distributed. 
 %
 In our analysis, we observed that after transforming our variables in their logarithmic form, 
 Pearson correlations performed just as well as the non-parametric indices.
@@ -768,7 +763,7 @@ regression analysis we performed later. That way, we could maintain
 consistency once multiple regression techniques are based on
 parametric indices~\cite{hair2006}.
 
-According to analysis described above, we ended up considering LOC and NM 
+According to the analysis described above, we ended up considering LOC and NM 
 as size metrics. Theoretically, the more LOC, the more NM.
 %
 However, it is possible to have more lines of code without having more modules, by
@@ -830,7 +825,7 @@ Thus, we have two different regressions, one for each attractiveness indicator.
 %
 They are the variables explained by the source code attributes proposed in our hypotheses.
 %
-Consequently, SC, LOC and NM metrics, which represent the source code attributes,
+Consequently, the SC, LOC and NM metrics, which represent the source code attributes,
 are the independent variables -- the influencers of attractiveness.
 
 %----------------------------------------------------------------------
@@ -936,7 +931,7 @@ and presented in detail in Section~\ref{variables}.
 Finally, with the linearized values of SC, NM, and LOC (independent variables) 
 and number of downloads and number of members (dependent variables), we tested 
 our hypotheses according to our statistical multiple regression model compound
-for this variables.
+for these variables.
 
 Table~\ref{table:regression} summarizes the regression results based on the
 Pearson's correlation values.
@@ -956,8 +951,9 @@ are measured using different scales (e.g., lines of code and structural complexi
 One cannot compare regular beta coefficients without first standardizing them.
 
 Moreover, structural complexity has a negative correlation with attractiveness,
-as expected. Noteworthy is that T-test and P (probability) values represent whether a source code
-metric is a statistically significant predictor or influencer of attractiveness indicators.
+as expected. Noteworthy is that the T-test and P (probability) values represent
+whether a source code metric is a statistically significant predictor or
+influencer of attractiveness indicators.
 %
 For downloads, the number of modules is not significant because
 its P-value is greater than 0.05. 
@@ -966,7 +962,7 @@ Finally, in the last line of Table \ref{table:regression}, R-squared values
 indicate the percentage of attractiveness (users and developers) variance that
 this set of source code metrics is capable of explaining. 
 %
-So, roughly speaking, a R-squared of 20 percent indicates that a set of
+So, roughly speaking, an R-squared of 20 percent indicates that a set of
 predictors can explain 20 percent of a dependent variable.
 %
 We obtained the following equations:
@@ -986,7 +982,7 @@ the size of influence that one of the source code metrics (the independent varia
 has on the attractiveness -- the dependent variable.
 %
 So, one unit change in an independent
-variable generates a beta-size influence on the dependent variable, on average.
+variable generates a $\beta$-size influence on the dependent variable, on average.
 
 
 The $R$-value represents the amount of the dependent variables that can be
@@ -996,7 +992,7 @@ In our analysis, the $R$-value indicated that source code metrics explain 18\%
 ($R^2 = 0.180$) of the number of downloads and 12\% ($R^2 = 0.121$) of the
 number of members. 
 %
-In conclusion, these are significant values for the social context that an
+These are significant values for the social context that an
 adoption or volunteering of a Free Software projects are involved.
 
 \subsection{Hypothesis 1}
@@ -1084,9 +1080,8 @@ In this context, lines of code probably is related to the amount of features in 
 which helps to attract both users and developers to the project.
 
 
-Additionally, when lines of code is kept constant, different values in
-number of modules represent different ways of organizing these features over
-different modules.
+However, when lines of code is kept constant, different values in the number of
+modules represent different ways of organizing these features over different modules.
 %
 A higher number of modules thus indicates a higher modularity, which makes
 it easier for developers to work on the project and requires less
@@ -1236,10 +1231,10 @@ Ideally, a project should keep its complexity constant as new code is incorporat
 because developers are interested in improving the software, and the users in the improvements.
 %
 This demonstrates to project leaders (in communities, foundations,
-governments, and companies)
-the importance to monitor LCOM4 and CBO metrics together with NM and LOC,
-thereby increasing their chances of forming a community of contributors
-around their software, further enhancing its quality.
+governments, and companies) the importance to monitor metrics such as LCOM4 and CBO
+together with NM and LOC, thereby increasing their chances of forming a community
+of contributors around their software, further enhancing its quality.
+%
 Thus, projects should grow managing their complexity, keeping the new
 members willingness to contribute.
 
@@ -1247,7 +1242,7 @@ Our study differs from related work because we analyzed a large
 sample of Free Software projects. Table \ref {table:statistics} shows how diverse our sample of
 6,773 projects is. There are projects with thousands of modules (7,177),
 millions of lines of code (2,983,103), large structural complexity (4,940),
-several hundred members (288), and millions of downloads (900,000,000).
+several hundred members (288), and hundreds of millions of downloads (941,498,760).
 This sample was based on well-defined criteria and the number of projects
 involved provided us with statistical confidence in the results.
 
@@ -1271,11 +1266,14 @@ the license, type of project, software life-cycle stage, and intended audience
 are all capable of influencing attractiveness \cite{Santos2010}.
 %
 At first sight, assuming that all these variables from our previous study are
-independent from the source code metrics we studied here, roughly 40\% of attractiveness variance would be then explained.
+independent from the source code metrics we studied here, roughly 40\% of
+attractiveness variance would be then explained.
 %
-However, including variables in an equation in a statistically sound manner is not
-straightforward. Accordingly, there is a need to further identify the interaction
-between that set of variables with the ones reported in this study.
+However, including variables in an equation in a statistically sound manner
+is not a trivial task.
+%
+Accordingly, there is a need to further identify the interaction between that
+set of variables with the ones reported in this study.
 
 \section*{Acknowledgments}
 The authors of this paper are supported by CNPQ, FAPESP, and the Qualipso project.
