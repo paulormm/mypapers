@@ -54,10 +54,6 @@ these can have a positive influence in projects chances of forming a community o
 contributors and users around their software, enabling further enhancement in quality.
 \end{abstract}
 
-%\pagebreak
-%\tableofcontents
-%\pagebreak
-
 \IEEEpeerreviewmaketitle
 
 %-------------------------------------------------------------
@@ -144,9 +140,6 @@ written in the C language from SourceForge.net.
 We show that, considering such a sample, one structural complexity metric
 and two size metrics play an important role in explaining attractiveness,
 here represented by the number of downloads and the number of project members.
-
-%\TODO{must be "we argue" and "we show" in past?}
-
 
 The remainder of this paper is organized as follows:
 %
@@ -265,9 +258,10 @@ Moreover, it is widely known that to build high-quality and flexible software,
 it is advisable to seek low coupling and high cohesion~\cite{richter99}.
 
 In fact, Darcy \emph{et al.}~\cite{darcy2005} showed that, individually, neither
-coupling nor cohesion are related to a software maintenance effort. Both must be considered together.
-When combined, the product of coupling and cohesion as a metric is positively correlated to
-the maintenance effort.
+coupling nor cohesion are related to a software maintenance effort.
+%
+Both must be considered together. When combined, the product of coupling and
+cohesion as a metric is positively correlated to the maintenance effort.
 
 In conclusion, seven source code metrics, selected according to criteria shown 
 in Section~\ref{researchDesign}, were used on the statistical model for our study.
@@ -281,7 +275,7 @@ our metric of structural complexity (SC)~\cite{darcy2005}.
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[scale=.35]{figure/attractiveness3}
+\includegraphics[scale=.34]{figure/attractiveness3}
 \caption{Attractiveness research model
 -- adapted from Santos Jr. et al~\cite{Santos2010}.}
 \label{attractiveness}
@@ -397,7 +391,9 @@ are proxies to the actual numbers of users and developers of the project, respec
 This study explored a large number of projects and applied the same criteria
 uniformly to all of them. 
 %
-Although we recognize that using these proxies is a limitation, we did not find in previous works better proxies that could represent more faithfully the number of users and number of developers in a large sample of projects.
+Although we recognize that using these proxies is a limitation, we did not find
+in previous works better proxies that could represent more faithfully the number
+of users and number of developers in a large sample of projects.
 
 
 The meaning of ``success'' to Free Software projects was discussed from
@@ -497,40 +493,38 @@ and Macxim/Spago4Q\footnote{\url{qualipso.dscpi.uninsubria.it/macxim}}.
 \subsection{Sample and Data Collection}
 \label{sdcollection}
 
-%\vspace{-1em}
 \begin{center}
 \begin{table*}[hbt]
 \centering \caption{Descriptive statistics}
 \begin{tabular}{|l|r|r|r|r|r|r|} \hline
   & \multicolumn{4}{|c|}{Raw} & \multicolumn{2}{|c|}{Logarithm}\\ \hline
 
-\textbf{Metric} 	    & Minimum & Maximum        & Mean      & Std. Deviation & Mean & Std. Deviation \\ \hline
+\textbf{Metric} 	    & Minimum & Maximum  & Mean           & Std. Deviation    & Mean & Std. Deviation \\ \hline
 
-(Average) Coupling Between Objects      & 0    & 7.12        & 2.26      & 9.04           & 0.35 & 0.98 \\ \hline
+(Average) Coupling Between Objects      & 0.0015 & 711.50         & 2.26       & 9.04           & 0.35 & 0.98 \\ \hline
 
-(Average) Lack of Cohesion on Methods   & 0    & 2.62        & 4.77      & 1.20           & 1.01 & 1.09 \\ \hline
+(Average) Lack of Cohesion on Methods   & 0.0004 & 262.00         & 4.77       & 12.00          & 1.01 & 1.09 \\ \hline
 
-(Average) Structural Complexity         & 0    & 4,940.00       & 15.79     & 114.69         & 1.37 & 1.57 \\ \hline
+(Average) Structural Complexity         & 0      & 4,940.00       & 15.79      & 114.69         & 1.37 & 1.57 \\ \hline
 
-(Total) Number of Modules               & 1    & 7,177.00       & 74.98     & 276.54         & 3.08 & 1.39 \\ \hline
+(Total) Number of Modules               & 1      & 7,177.00       & 74.98      & 276.54         & 3.08 & 1.39 \\ \hline
 
-(Total) Lines of Code                   & 11   & 2,983,103.00  & 17,700.00 & 91,614.70      & 8.28 & 1.58 \\ \hline
+(Total) Lines of Code                   & 11     & 2,983,103.00   & 17,722.23  & 91,614.70      & 8.28 & 1.58 \\ \hline
 
-(Total) Number of Public Variables      & 1    & 516034.00      & 994.80    & 8850.44        & 4.91 & 1.80 \\ \hline
+(Total) Number of Public Variables      & 1      & 516034.00      & 994.80     & 8850.44        & 4.91 & 1.80 \\ \hline
 
-(Total) Number of Functions	        & 1    & 99468.00       & 612.54    & 2987.28        & 4.92 & 1.63 \\ \hline
+(Total) Number of Functions	        & 1      & 99468.00       & 612.54     & 2987.28        & 4.92 & 1.63 \\ \hline
 
-(Total) Number of Public Functions      & 1    & 99468.00       & 642.12    & 3025.94        & 5.02 & 1.58 \\ \hline
+(Total) Number of Public Functions      & 1      & 99468.00       & 642.12     & 3025.94        & 5.02 & 1.58 \\ \hline
 
-(Total) Number of Members               & 1    & 288.00         & 2.90       & 6.19          & 0.59 & 0.79 \\ \hline
+(Total) Number of Members               & 1      & 288.00         & 2.90       & 6.19          & 0.59 & 0.79 \\ \hline
 
-(Total) Number of Downloads             & 6    & 941,498,760.00   & 957,000.00 & 17,760,000.00 & 8.20 & 2.66 \\ \hline
+(Total) Number of Downloads             & 6      & 941,498,760.00 & 956,674.26 & 17,760,732.37 & 8.20 & 2.66 \\ \hline
 
 \end{tabular}
 \label{table:statistics}
 \end{table*}
 \end{center}
-%\vspace{-1em}
 
 
 SourceForge.net shares its data to support Free Software researchers.
@@ -614,7 +608,6 @@ them proper to run multiple regressions~\cite{Crowston2002}.
 %
 The arithmetic mean and standard deviation of the logarithm values can be
 seen in the second part of Table~\ref{table:statistics}.
-%% Paulo: writing center: in the ou in first/second part of ..
 
 %--------------------------------
 \subsection{Variables}
@@ -639,7 +632,6 @@ a simple yet comprehensive model to relate source code and attractiveness.
 Thus, the ACC, AMZ\_Size, COF, DIT, NOC, NOV, and RFC metrics were left out of
 the scope of this study.
 
-%\vspace{-3em}
 \begin{center}
 \begin{table*}[hbt]
 \centering \caption{Parametric Correlations: Pearson}
@@ -672,7 +664,6 @@ Number of Downloads         & 0.129 & 0.107 & 0.156 & 0.344 & 0.410 & 0.386 & 0.
 \end{table*}
 \end{center}
 
-%\vspace{-1em}
 \begin{center}
 \begin{table*}[bt]
 \centering \caption{Non-Parametric Correlations: Spearman}
@@ -705,7 +696,6 @@ Number of Downloads           & 0.169 & 0.162 & 0.196 & 0.320 & 0.392 & 0.363 & 
 \end{table*}
 \end{center}
 
-%\vspace{-1em}
 \begin{center}
 \begin{table*}[bt]
 \centering \caption{Non-Parametric Correlations: Kendall}
@@ -737,7 +727,6 @@ Number of Downloads         & 0.114 & 0.109 & 0.132 & 0.219 & 0.270 & 0.249 & 0.
 \label{kendall}
 \end{table*}
 \end{center}
-%\vspace{-4em}
 
 Nevertheless, in the first stage of our statistical analysis,
 the LOC, NOF, NPV and NPF metrics showed a high correlation between each other,
@@ -776,12 +765,12 @@ Pearson's correlations values were approximately 0.9 or higher as our criteria,
 emphasized in Table~\ref{pearson}.
 
 %
-In conclusion, LOC and NM were collected since they measure different kinds of size metrics, more or less
-influenced by programming languages and coding styles, respectively.
+In conclusion, LOC and NM were collected since they measure different kinds of
+size metrics, more or less influenced by programming languages and coding
+styles, respectively.
 %
-% João: fiz essa mudança para quebrar a mesma estrutura de frase
-Finally, to obtain the value of our structural
-complexity metric (SC), explained in Section~\ref{background}, CBO and LCOM4 were multiplied.
+Finally, to obtain the value of our structural complexity metric (SC),
+explained in Section~\ref{background}, CBO and LCOM4 were multiplied.
 %
 These three metrics did not show high correlations with other metrics.
 %
@@ -844,8 +833,7 @@ perception of quality as consequence of attractiveness.
 According to the metrics chosen to represent structural
 complexity and size, we formulated three hypotheses:
 
-\begin{enumerate}
-\item \emph{Free Software projects with higher structural complexity have
+H1 -- \emph{Free Software projects with higher structural complexity have
 lower attractiveness.}
 %
 The higher the software complexity, the more difficult it is to understand
@@ -858,7 +846,7 @@ Over time, with less members and users, the project may lose its ability to
 add new features and fix bugs and, consequently, its ability to evolve and meet
 the user's changing requirements.
 
-\item \emph{Free Software projects with more lines of code have
+H2 -- \emph{Free Software projects with more lines of code have
 higher attractiveness.}
 %
 To some extent, lines of code reflect the amount of features of the project and
@@ -868,7 +856,7 @@ Therefore, projects with more lines of code will usually attract more users
 (since they have more features) and developers -- since they offer more 
 opportunities for contribution.
 
-\item \emph{Free Software projects with a higher number of modules have
+H3 --  \emph{Free Software projects with a higher number of modules have
 higher attractiveness.}
 %
 The number of modules may indicate the project size and the possibility
@@ -879,17 +867,14 @@ which facilitates contributions.
 %
 This attracts more members, who can write more features and fix more bugs,
 which would then attract more users.
-\end{enumerate}
 
 %------------------------
 
 \section{Hypotheses Testing}   
 \label{hypothesesTesting}
 
-%\vspace{-1em}
 \begin{center}
 \begin{table*}[hbt]
-%\scalefont{0.9}
 \centering \caption{Equations and Pearson Correlations}
 \begin{tabular}{|l|r|r|r|r|r|r|r|r|} \hline
 
@@ -914,7 +899,6 @@ $R^2$ & \multicolumn{4}{|c|}{0.180} & \multicolumn{4}{|c|}{0.121}\\ \hline
 \end{center}
 %\vspace{-2em}
 
-%%TODO: new
 We specified a multiple regression model to explain the relationships 
 between the selected source code metrics and attractiveness in Free Software projects.
 %
@@ -922,12 +906,12 @@ Before running this model, we analyzed and applied statistical techniques
 on the descriptive statistical values of our dataset presented in
 Table~\ref{table:statistics}, discussed in Section~\ref{sdcollection}.
 %
-With the results in hand, we selected the variables of our regression model according to our scope
-definition, the analysis of the Pearson parametric
+With the results in hand, we selected the variables of our regression model
+according to our scope definition, the analysis of the Pearson parametric
 correlations and Spearman and Kendal non-parametric correlations,
 shown in Table~\ref{pearson}, Table~\ref{spearman}, and Table~\ref{kendall} respectively,
 and presented in detail in Section~\ref{variables}.
-%%TODO: new
+%
 Finally, with the linearized values of SC, NM, and LOC (independent variables) 
 and number of downloads and number of members (dependent variables), we tested 
 our hypotheses according to our statistical multiple regression model compound
@@ -968,6 +952,7 @@ predictors can explain 20 percent of a dependent variable.
 We obtained the following equations:
 
 \begin{displaymath}
+\scalefont{.9}
 \begin{array}{lll}
 downloads = & 1.551 - 0.286\times log(SC) \\
             & + 0.856\times log(LOC) + 0.008\times log(NM) \\
@@ -975,6 +960,7 @@ downloads = & 1.551 - 0.286\times log(SC) \\
 members = & -0.668 - 0.033\times log(SC) \\
             & + 0.126\times log(LOC) + 0.087\times log(NM)
 \end{array}
+\scalefont{1}
 \end{displaymath}
 
 Each equation has one $R$-value. The coefficient ($\beta$) of each variable is
@@ -1029,7 +1015,6 @@ to change.
 %
 This may prevent new developers from joining the project. With fewer members,
 the community around a project is less active.
-%\TODO{usar with ou and quando citar beta e p?}
 
 \subsection{Hypothesis 2}
 
@@ -1181,7 +1166,10 @@ attractiveness.
 Moreover, we considered structural complexity in terms of CBO
 and LCOM4 metrics together, while they used a different set of metrics to
 represent the notion of design quality, having only CBO in common with
-the present study. Therefore, a straightforward comparison between their study and ours is not so simple.
+the present study.
+%
+Therefore, a straightforward comparison between their study and ours is not
+so simple.
 
 %-------------------------------------------------------------------------
 \section{Conclusion}
@@ -1238,11 +1226,26 @@ of contributors around their software, further enhancing its quality.
 Thus, projects should grow managing their complexity, keeping the new
 members willingness to contribute.
 
-Our study differs from related work because we analyzed a large
-sample of Free Software projects. Table \ref {table:statistics} shows how diverse our sample of
-6,773 projects is. There are projects with thousands of modules (7,177),
-millions of lines of code (2,983,103), large structural complexity (4,940),
-several hundred members (288), and hundreds of millions of downloads (941,498,760).
+Our study differs from related work because we analyzed a large sample of Free
+Software projects.
+%
+Table \ref {table:statistics} shows how diverse our sample of 6,773 projects is.
+%
+There are projects with thousands of modules
+(7,177 -- Broadcom replacement firmware\footnote{\url{sourceforge.net/projects/newbroadcom}}),
+%
+millions of lines of code 
+(2,983,103 -- Broadcom replacement firmware), %% eh o mesmo que o anterior, eu nao errei ;)
+%
+large structural complexity
+(4,940 -- pyCDK\footnote{\url{sourceforge.net/projects/pycdk}}),
+%
+several hundred members
+(288 -- TinyOS\footnote{\url{sourceforge.net/projects/tinyos}}),
+%
+and hundreds of millions of downloads
+(941,498,760 -- MinGW: Minimalist GNU for Windows\footnote{\url{sourceforge.net/projects/mingw}}).
+%
 This sample was based on well-defined criteria and the number of projects
 involved provided us with statistical confidence in the results.
 
